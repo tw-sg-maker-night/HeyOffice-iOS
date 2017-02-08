@@ -25,10 +25,10 @@ class TabBarController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("checking user is logged in...")
-        self.user?.getDetails().continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserGetDetailsResponse>) -> Any? in
-            print("TabBarController.getDetails task completed")
-            
+        print("checking user is logged in...")        
+        self.user?.getSession().continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserSession>) -> Any? in
+            print("TabBarController.getSession task completed")
+
             if let error = task.error {
                 print("Error \(error.localizedDescription)")
             } else {

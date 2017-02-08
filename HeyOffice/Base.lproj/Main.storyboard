@@ -90,6 +90,55 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="iI5-DF-VOX">
+            <objects>
+                <viewController id="fPW-e7-Jc4" customClass="SettingsViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tol-Yy-YbZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="V9M-aT-GmW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lQO-Lf-mSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Settings View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="flq-G7-Ab8">
+                                <rect key="frame" x="79" y="300" width="218" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SettingsViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbN-N2-mmI">
+                                <rect key="frame" x="78" y="350" width="219" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-na-ckA">
+                                <rect key="frame" x="163" y="375" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked" destination="fPW-e7-Jc4" eventType="touchUpInside" id="xDS-u4-0pe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V9M-aT-GmW" firstAttribute="top" secondItem="kKU-na-ckA" secondAttribute="bottom" constant="213" id="79B-gR-VMl"/>
+                            <constraint firstItem="kKU-na-ckA" firstAttribute="centerX" secondItem="lQO-Lf-mSb" secondAttribute="centerX" id="9FH-k8-K3H"/>
+                            <constraint firstItem="nbN-N2-mmI" firstAttribute="centerX" secondItem="kKU-na-ckA" secondAttribute="centerX" id="LEV-vv-acq"/>
+                            <constraint firstItem="flq-G7-Ab8" firstAttribute="trailing" secondItem="nbN-N2-mmI" secondAttribute="trailing" id="X4s-c7-TrT"/>
+                            <constraint firstItem="kKU-na-ckA" firstAttribute="top" secondItem="nbN-N2-mmI" secondAttribute="bottom" constant="8" symbolic="YES" id="oK0-cL-wme"/>
+                            <constraint firstItem="nbN-N2-mmI" firstAttribute="top" secondItem="flq-G7-Ab8" secondAttribute="bottom" constant="8" symbolic="YES" id="qJq-Ya-dKO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="vjD-Xy-Ixb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fM-7L-Wyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724" y="7"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="k65-Wm-rcf">
             <objects>
@@ -181,6 +230,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="fPW-e7-Jc4" kind="relationship" relationship="viewControllers" id="F87-zj-dV1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

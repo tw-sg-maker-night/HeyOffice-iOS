@@ -34,7 +34,6 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     func getDetails(_ authenticationInput: AWSCognitoIdentityPasswordAuthenticationInput, passwordAuthenticationCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>) {
         print("LoginViewController.getDetails")
         
-        
         self.passwordAuthenticationCompletion = passwordAuthenticationCompletionSource;
         DispatchQueue.main.async {
             if self.usernameField.text == nil {

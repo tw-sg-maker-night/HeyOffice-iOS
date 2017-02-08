@@ -21,6 +21,7 @@
 		EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90301E4AAD9900FE15D1 /* Constants.swift */; };
 		EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */; };
 		EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90341E4AB01300FE15D1 /* TabBarController.swift */; };
+		EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		EFBC90301E4AAD9900FE15D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFBC90341E4AB01300FE15D1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				EF8A792F1E4384190096AF45 /* SecondViewController.swift */,
 				EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */,
 				EFBC90341E4AB01300FE15D1 /* TabBarController.swift */,
+				EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				EF8A79301E4384190096AF45 /* SecondViewController.swift in Sources */,
 				EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */,
+				EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */,
 				EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */,
 				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
