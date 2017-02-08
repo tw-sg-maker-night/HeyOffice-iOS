@@ -11,9 +11,10 @@ import AWSCore
 import AWSCognitoIdentityProvider
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
 
     var window: UIWindow?
+    var storyboard: UIStoryboard?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -28,7 +29,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AWSCognitoIdentityUserPool.register(with: serviceConfig, userPoolConfiguration: userPoolConfig, forKey: "UserPool")
         
+        let pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
+        pool.delegate = self
+        
+        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         return true
+    }
+    
+    func startPasswordAuthentication() -> AWSCognitoIdentityPasswordAuthentication {
+        print("startPasswordAuthentication")
+        
+        let loginController = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        
+        self.window?.rootViewController?.present(loginController, animated: true, completion: {
+            print("Login View Presentation Complete")
+        })
+        
+        return loginController
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

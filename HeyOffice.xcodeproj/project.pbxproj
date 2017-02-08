@@ -14,6 +14,13 @@
 		EF8A79351E4384190096AF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8A79341E4384190096AF45 /* Assets.xcassets */; };
 		EF8A79381E4384190096AF45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8A79361E4384190096AF45 /* LaunchScreen.storyboard */; };
 		EF8A79431E4384190096AF45 /* HeyOfficeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A79421E4384190096AF45 /* HeyOfficeTests.swift */; };
+		EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */; };
+		EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */; };
+		EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90301E4AAD9900FE15D1 /* Constants.swift */; };
+		EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */; };
+		EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90341E4AB01300FE15D1 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +32,21 @@
 			remoteInfo = HeyOffice;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EFBC902E1E4AAD3200FE15D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
+				EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EF8A79281E4384190096AF45 /* HeyOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +60,11 @@
 		EF8A793E1E4384190096AF45 /* HeyOfficeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyOfficeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8A79421E4384190096AF45 /* HeyOfficeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyOfficeTests.swift; sourceTree = "<group>"; };
 		EF8A79441E4384190096AF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProvider.framework; path = Carthage/Build/iOS/AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
+		EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
+		EFBC90301E4AAD9900FE15D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EFBC90341E4AB01300FE15D1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +90,7 @@
 		EF8A791F1E4384190096AF45 = {
 			isa = PBXGroup;
 			children = (
+				EFBC902F1E4AAD3800FE15D1 /* Frameworks */,
 				EF8A792A1E4384190096AF45 /* HeyOffice */,
 				EF8A79411E4384190096AF45 /* HeyOfficeTests */,
 				EF8A79291E4384190096AF45 /* Products */,
@@ -79,9 +109,9 @@
 		EF8A792A1E4384190096AF45 /* HeyOffice */ = {
 			isa = PBXGroup;
 			children = (
+				EFBC90271E4AABAB00FE15D1 /* Controllers */,
 				EF8A792B1E4384190096AF45 /* AppDelegate.swift */,
-				EF8A792D1E4384190096AF45 /* FirstViewController.swift */,
-				EF8A792F1E4384190096AF45 /* SecondViewController.swift */,
+				EFBC90301E4AAD9900FE15D1 /* Constants.swift */,
 				EF8A79311E4384190096AF45 /* Main.storyboard */,
 				EF8A79341E4384190096AF45 /* Assets.xcassets */,
 				EF8A79361E4384190096AF45 /* LaunchScreen.storyboard */,
@@ -99,6 +129,26 @@
 			path = HeyOfficeTests;
 			sourceTree = "<group>";
 		};
+		EFBC90271E4AABAB00FE15D1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF8A792D1E4384190096AF45 /* FirstViewController.swift */,
+				EF8A792F1E4384190096AF45 /* SecondViewController.swift */,
+				EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */,
+				EFBC90341E4AB01300FE15D1 /* TabBarController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EFBC902F1E4AAD3800FE15D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */,
+				EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +159,7 @@
 				EF8A79241E4384190096AF45 /* Sources */,
 				EF8A79251E4384190096AF45 /* Frameworks */,
 				EF8A79261E4384190096AF45 /* Resources */,
+				EFBC902E1E4AAD3200FE15D1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +258,9 @@
 				EF8A79301E4384190096AF45 /* SecondViewController.swift in Sources */,
 				EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */,
 				EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */,
+				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
+				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
+				EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +400,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9269KSNZG8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HeyOffice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twsg.HeyOffice;
@@ -359,6 +417,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9269KSNZG8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HeyOffice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twsg.HeyOffice;
@@ -416,6 +478,7 @@
 				EF8A79491E4384190096AF45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF8A794A1E4384190096AF45 /* Build configuration list for PBXNativeTarget "HeyOfficeTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +487,7 @@
 				EF8A794C1E4384190096AF45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
