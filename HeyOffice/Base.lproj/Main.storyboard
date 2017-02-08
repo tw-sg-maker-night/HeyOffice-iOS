@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -107,13 +108,61 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tn7-cT-QAl">
+                                <rect key="frame" x="87" y="57" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zNs-0q-uuT" id="ozT-w5-mqa"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9F-Fk-ScR">
+                                <rect key="frame" x="87" y="95" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zNs-0q-uuT" id="8Pi-aV-qxN"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-lz-H8Y">
+                                <rect key="frame" x="87" y="133" width="200" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="99V-5o-JI7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;message label&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-4a-yQu">
+                                <rect key="frame" x="87" y="171" width="200" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="leading" secondItem="A9F-Fk-ScR" secondAttribute="leading" id="3UY-rl-oeT"/>
+                            <constraint firstItem="Tn7-cT-QAl" firstAttribute="trailing" secondItem="A9F-Fk-ScR" secondAttribute="trailing" id="8Oa-GW-w3n"/>
+                            <constraint firstItem="Tn7-cT-QAl" firstAttribute="leading" secondItem="A9F-Fk-ScR" secondAttribute="leading" id="D1Q-Xz-qN5"/>
+                            <constraint firstItem="SX1-4a-yQu" firstAttribute="top" secondItem="aXU-lz-H8Y" secondAttribute="bottom" constant="8" symbolic="YES" id="GEX-RB-PNs"/>
+                            <constraint firstItem="A9F-Fk-ScR" firstAttribute="top" secondItem="Tn7-cT-QAl" secondAttribute="bottom" constant="8" symbolic="YES" id="Iqx-OS-ImA"/>
+                            <constraint firstItem="Tn7-cT-QAl" firstAttribute="leading" secondItem="xTg-IB-Boz" secondAttribute="leadingMargin" constant="71" id="NIC-gj-gBW"/>
                             <constraint firstItem="ffc-jE-adv" firstAttribute="top" secondItem="rXj-Wb-L9w" secondAttribute="bottom" constant="8" symbolic="YES" id="NTF-JN-Ccd"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="trailing" secondItem="A9F-Fk-ScR" secondAttribute="trailing" id="OAO-54-zr3"/>
+                            <constraint firstItem="Tn7-cT-QAl" firstAttribute="centerX" secondItem="ffc-jE-adv" secondAttribute="centerX" id="Tpl-po-MUD"/>
+                            <constraint firstItem="SX1-4a-yQu" firstAttribute="trailing" secondItem="aXU-lz-H8Y" secondAttribute="trailing" id="URR-tQ-z3o"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="top" secondItem="A9F-Fk-ScR" secondAttribute="bottom" constant="8" symbolic="YES" id="WX3-kI-TNn"/>
+                            <constraint firstItem="Tn7-cT-QAl" firstAttribute="top" secondItem="ffc-jE-adv" secondAttribute="bottom" constant="8" symbolic="YES" id="nAV-4S-tYN"/>
                             <constraint firstItem="ffc-jE-adv" firstAttribute="centerX" secondItem="xTg-IB-Boz" secondAttribute="centerX" id="y7S-TA-SA6"/>
+                            <constraint firstItem="SX1-4a-yQu" firstAttribute="leading" secondItem="aXU-lz-H8Y" secondAttribute="leading" id="z8J-cF-VVu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="SX1-4a-yQu" id="8Ly-gN-P1E"/>
+                        <outlet property="passwordField" destination="A9F-Fk-ScR" id="flG-SU-q12"/>
+                        <outlet property="usernameField" destination="Tn7-cT-QAl" id="hBu-Z1-T3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuj-gF-hF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
