@@ -70,6 +70,11 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         self.performSegue(withIdentifier: "Register", sender: self)
     }
     
+    @IBAction func forgotPasswordClicked() {
+        print("forgotPasswordClicked")
+        self.performSegue(withIdentifier: "ForgotPassword", sender: self)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("textFieldShouldReturn")
         if textField == self.usernameField {

@@ -202,7 +202,6 @@
                                 <rect key="frame" x="87" y="133" width="200" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="loginClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="T9K-ah-9bc"/>
                                     <action selector="registerClicked" destination="ob2-Ly-t0X" eventType="touchUpInside" id="mVu-cC-Fu5"/>
                                 </connections>
                             </button>
@@ -247,6 +246,171 @@
             </objects>
             <point key="canvasLocation" x="-250" y="1013"/>
         </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="3Ov-1W-srU">
+            <objects>
+                <viewController id="h0w-I7-G7S" customClass="ForgotPasswordViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6qn-Ph-AkS"/>
+                        <viewControllerLayoutGuide type="bottom" id="efC-4I-1g5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZP9-q6-OAU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asx-vg-Zub">
+                                <rect key="frame" x="88" y="57" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zur-qy-h2U"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-Jr-lfM">
+                                <rect key="frame" x="88" y="95" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="c0X-e8-yhJ"/>
+                                </constraints>
+                                <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="forgotPasswordClicked" destination="h0w-I7-G7S" eventType="touchUpInside" id="l0d-T4-zgy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;message label&gt;" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioj-Bv-iDs">
+                                <rect key="frame" x="88" y="133" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNN-Zj-hvK">
+                                <rect key="frame" x="123" y="28" width="129" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4wY-hh-9Ic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XTw-Jr-lfM" firstAttribute="trailing" secondItem="Ioj-Bv-iDs" secondAttribute="trailing" id="4hK-M1-Gk8"/>
+                            <constraint firstItem="XTw-Jr-lfM" firstAttribute="top" secondItem="asx-vg-Zub" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ug-2d-lOL"/>
+                            <constraint firstItem="Ioj-Bv-iDs" firstAttribute="top" secondItem="XTw-Jr-lfM" secondAttribute="bottom" constant="8" symbolic="YES" id="H5i-ux-RkT"/>
+                            <constraint firstItem="XTw-Jr-lfM" firstAttribute="leading" secondItem="Ioj-Bv-iDs" secondAttribute="leading" id="LSI-X5-6QX"/>
+                            <constraint firstItem="asx-vg-Zub" firstAttribute="leading" secondItem="ZP9-q6-OAU" secondAttribute="leadingMargin" constant="72" id="OOs-Dy-iaA"/>
+                            <constraint firstItem="vNN-Zj-hvK" firstAttribute="top" secondItem="6qn-Ph-AkS" secondAttribute="bottom" constant="8" symbolic="YES" id="bX6-IE-wJY"/>
+                            <constraint firstItem="asx-vg-Zub" firstAttribute="leading" secondItem="XTw-Jr-lfM" secondAttribute="leading" id="cgk-64-704"/>
+                            <constraint firstItem="asx-vg-Zub" firstAttribute="top" secondItem="vNN-Zj-hvK" secondAttribute="bottom" constant="8" symbolic="YES" id="ehV-JB-IJA"/>
+                            <constraint firstItem="efC-4I-1g5" firstAttribute="top" secondItem="Ioj-Bv-iDs" secondAttribute="bottom" constant="500" id="gqb-IP-OJM"/>
+                            <constraint firstItem="vNN-Zj-hvK" firstAttribute="centerX" secondItem="ZP9-q6-OAU" secondAttribute="centerX" id="mMG-ea-AKt"/>
+                            <constraint firstItem="asx-vg-Zub" firstAttribute="trailing" secondItem="XTw-Jr-lfM" secondAttribute="trailing" id="o13-GO-JUT"/>
+                            <constraint firstItem="vNN-Zj-hvK" firstAttribute="centerX" secondItem="asx-vg-Zub" secondAttribute="centerX" id="xNT-ai-vZg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="asx-vg-Zub" id="ZqO-zx-tMP"/>
+                        <outlet property="messageLabel" destination="Ioj-Bv-iDs" id="4Gd-hI-MSR"/>
+                        <segue destination="y5z-df-nAp" kind="show" identifier="ConfirmForgotPassword" id="BrC-5G-7fI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1q-SH-u7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-610" y="1736"/>
+        </scene>
+        <!--Confirm Forgot Password View Controller-->
+        <scene sceneID="FFh-Mk-MLZ">
+            <objects>
+                <viewController id="y5z-df-nAp" customClass="ConfirmForgotPasswordViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AWj-wk-wqc"/>
+                        <viewControllerLayoutGuide type="bottom" id="rL0-q9-anm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OYm-9y-l6x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjG-eE-ILz">
+                                <rect key="frame" x="88" y="57" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TL5-ru-WqX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="y5z-df-nAp" id="Kvu-hR-vHK"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7HS-60-CY9">
+                                <rect key="frame" x="87" y="95" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J1l-ut-XCZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="y5z-df-nAp" id="EUb-9S-A4O"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sky-TJ-HPc">
+                                <rect key="frame" x="99" y="28" width="178" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="z8z-r7-t0M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKt-9p-UIF">
+                                <rect key="frame" x="88" y="133" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cYR-iI-uhT"/>
+                                </constraints>
+                                <state key="normal" title="Update Password"/>
+                                <connections>
+                                    <action selector="forgotPasswordClicked" destination="h0w-I7-G7S" eventType="touchUpInside" id="LI9-GK-aUC"/>
+                                    <action selector="updatePasswordClicked" destination="y5z-df-nAp" eventType="touchUpInside" id="5VF-oG-hyL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;message label&gt;" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvd-Qm-U3r">
+                                <rect key="frame" x="88" y="171" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sky-TJ-HPc" firstAttribute="centerX" secondItem="OYm-9y-l6x" secondAttribute="centerX" id="2vf-ci-OY1"/>
+                            <constraint firstItem="7HS-60-CY9" firstAttribute="centerX" secondItem="OYm-9y-l6x" secondAttribute="centerX" id="54S-Ba-NDH"/>
+                            <constraint firstItem="Sky-TJ-HPc" firstAttribute="top" secondItem="AWj-wk-wqc" secondAttribute="bottom" constant="8" symbolic="YES" id="64P-FP-WAv"/>
+                            <constraint firstItem="7HS-60-CY9" firstAttribute="leading" secondItem="OYm-9y-l6x" secondAttribute="leadingMargin" constant="71" id="PLl-et-Ky6"/>
+                            <constraint firstItem="UKt-9p-UIF" firstAttribute="top" secondItem="7HS-60-CY9" secondAttribute="bottom" constant="8" symbolic="YES" id="Pe0-We-saa"/>
+                            <constraint firstItem="wjG-eE-ILz" firstAttribute="trailing" secondItem="UKt-9p-UIF" secondAttribute="trailing" id="Sq5-pB-hKN"/>
+                            <constraint firstItem="rL0-q9-anm" firstAttribute="top" secondItem="dvd-Qm-U3r" secondAttribute="bottom" constant="462" id="UJX-Li-ie3"/>
+                            <constraint firstItem="wjG-eE-ILz" firstAttribute="leading" secondItem="UKt-9p-UIF" secondAttribute="leading" id="WT5-7H-huc"/>
+                            <constraint firstItem="wjG-eE-ILz" firstAttribute="leading" secondItem="OYm-9y-l6x" secondAttribute="leadingMargin" constant="72" id="dp0-dT-y9A"/>
+                            <constraint firstItem="wjG-eE-ILz" firstAttribute="top" secondItem="Sky-TJ-HPc" secondAttribute="bottom" constant="8" symbolic="YES" id="gaY-Rs-UA1"/>
+                            <constraint firstItem="UKt-9p-UIF" firstAttribute="leading" secondItem="dvd-Qm-U3r" secondAttribute="leading" id="ivO-vi-Cqa"/>
+                            <constraint firstItem="UKt-9p-UIF" firstAttribute="trailing" secondItem="dvd-Qm-U3r" secondAttribute="trailing" id="kZ2-vh-qKX"/>
+                            <constraint firstItem="7HS-60-CY9" firstAttribute="top" secondItem="wjG-eE-ILz" secondAttribute="bottom" constant="8" symbolic="YES" id="kjw-LJ-kJL"/>
+                            <constraint firstItem="dvd-Qm-U3r" firstAttribute="top" secondItem="UKt-9p-UIF" secondAttribute="bottom" constant="8" symbolic="YES" id="knd-Uh-cUd"/>
+                            <constraint firstItem="Sky-TJ-HPc" firstAttribute="centerX" secondItem="wjG-eE-ILz" secondAttribute="centerX" id="qaJ-M9-hcV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="codeField" destination="wjG-eE-ILz" id="V8n-3f-8cC"/>
+                        <outlet property="messageLabel" destination="dvd-Qm-U3r" id="Kah-b6-d4P"/>
+                        <outlet property="passwordField" destination="7HS-60-CY9" id="pOU-qe-kiq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYE-2A-zKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127" y="1736"/>
+        </scene>
         <!--Confirm Registration View Controller-->
         <scene sceneID="fXM-ij-tfA">
             <objects>
@@ -288,7 +452,6 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="confirmClicked" destination="qjb-sq-WOq" eventType="touchUpInside" id="eAV-5W-Hfn"/>
-                                    <action selector="loginClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="8nI-PK-sFJ"/>
                                     <action selector="registerClicked" destination="ob2-Ly-t0X" eventType="touchUpInside" id="BZd-C7-zlH"/>
                                 </connections>
                             </button>
@@ -373,15 +536,13 @@
                                     <action selector="loginClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="99V-5o-JI7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;message label&gt;" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-4a-yQu">
-                                <rect key="frame" x="87" y="171" width="200" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="U8X-ZD-NCK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjd-g4-20h">
+                                <rect key="frame" x="87" y="171" width="200" height="30"/>
+                                <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="forgotPasswordClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="gK9-4K-GxL"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgL-xI-q8t">
                                 <rect key="frame" x="159" y="617" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
@@ -389,25 +550,37 @@
                                     <action selector="registerClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="iPz-Oc-a8m"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;message label&gt;" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-4a-yQu">
+                                <rect key="frame" x="87" y="209" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="CIj-oJ-fxW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="leading" secondItem="A9F-Fk-ScR" secondAttribute="leading" id="3UY-rl-oeT"/>
                             <constraint firstItem="Tn7-cT-QAl" firstAttribute="trailing" secondItem="A9F-Fk-ScR" secondAttribute="trailing" id="8Oa-GW-w3n"/>
+                            <constraint firstItem="SX1-4a-yQu" firstAttribute="top" secondItem="fjd-g4-20h" secondAttribute="bottom" constant="8" symbolic="YES" id="Aee-eR-UjZ"/>
                             <constraint firstItem="Tn7-cT-QAl" firstAttribute="leading" secondItem="A9F-Fk-ScR" secondAttribute="leading" id="D1Q-Xz-qN5"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="leading" secondItem="fjd-g4-20h" secondAttribute="leading" id="Dvk-Ax-iuf"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="leading" secondItem="A9F-Fk-ScR" secondAttribute="leading" id="FEL-zY-IQV"/>
                             <constraint firstItem="A9F-Fk-ScR" firstAttribute="top" secondItem="Tn7-cT-QAl" secondAttribute="bottom" constant="8" symbolic="YES" id="Iqx-OS-ImA"/>
+                            <constraint firstItem="fjd-g4-20h" firstAttribute="leading" secondItem="SX1-4a-yQu" secondAttribute="leading" id="Jpx-IF-1Zc"/>
                             <constraint firstItem="Tn7-cT-QAl" firstAttribute="leading" secondItem="xTg-IB-Boz" secondAttribute="leadingMargin" constant="71" id="NIC-gj-gBW"/>
                             <constraint firstItem="ffc-jE-adv" firstAttribute="top" secondItem="rXj-Wb-L9w" secondAttribute="bottom" constant="8" symbolic="YES" id="NTF-JN-Ccd"/>
-                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="trailing" secondItem="A9F-Fk-ScR" secondAttribute="trailing" id="OAO-54-zr3"/>
                             <constraint firstItem="Tn7-cT-QAl" firstAttribute="centerX" secondItem="ffc-jE-adv" secondAttribute="centerX" id="Tpl-po-MUD"/>
-                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="top" secondItem="A9F-Fk-ScR" secondAttribute="bottom" constant="8" symbolic="YES" id="WX3-kI-TNn"/>
-                            <constraint firstItem="SX1-4a-yQu" firstAttribute="top" secondItem="aXU-lz-H8Y" secondAttribute="bottom" constant="8" symbolic="YES" id="Wgd-tr-c9Z"/>
                             <constraint firstAttribute="bottom" secondItem="wgL-xI-q8t" secondAttribute="bottom" constant="20" symbolic="YES" id="XGL-C8-w3u"/>
-                            <constraint firstItem="wgL-xI-q8t" firstAttribute="centerX" secondItem="SX1-4a-yQu" secondAttribute="centerX" id="Yf8-tp-1Za"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="top" secondItem="A9F-Fk-ScR" secondAttribute="bottom" constant="8" symbolic="YES" id="aFx-K8-bsn"/>
+                            <constraint firstItem="fjd-g4-20h" firstAttribute="trailing" secondItem="SX1-4a-yQu" secondAttribute="trailing" id="gLd-lo-8Hz"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="trailing" secondItem="A9F-Fk-ScR" secondAttribute="trailing" id="gPU-vN-ta1"/>
+                            <constraint firstItem="fjd-g4-20h" firstAttribute="top" secondItem="aXU-lz-H8Y" secondAttribute="bottom" constant="8" symbolic="YES" id="kTu-Gi-PMS"/>
+                            <constraint firstItem="SX1-4a-yQu" firstAttribute="centerX" secondItem="wgL-xI-q8t" secondAttribute="centerX" id="kqD-5T-UwL"/>
                             <constraint firstItem="Tn7-cT-QAl" firstAttribute="top" secondItem="ffc-jE-adv" secondAttribute="bottom" constant="8" symbolic="YES" id="nAV-4S-tYN"/>
-                            <constraint firstItem="SX1-4a-yQu" firstAttribute="trailing" secondItem="aXU-lz-H8Y" secondAttribute="trailing" id="qoE-Ie-J0k"/>
-                            <constraint firstItem="SX1-4a-yQu" firstAttribute="leading" secondItem="aXU-lz-H8Y" secondAttribute="leading" id="rW7-rZ-Kci"/>
                             <constraint firstItem="ffc-jE-adv" firstAttribute="centerX" secondItem="xTg-IB-Boz" secondAttribute="centerX" id="y7S-TA-SA6"/>
+                            <constraint firstItem="aXU-lz-H8Y" firstAttribute="trailing" secondItem="fjd-g4-20h" secondAttribute="trailing" id="zUg-1O-gg8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lPg-OW-wDg"/>
@@ -416,11 +589,12 @@
                         <outlet property="passwordField" destination="A9F-Fk-ScR" id="flG-SU-q12"/>
                         <outlet property="usernameField" destination="Tn7-cT-QAl" id="hBu-Z1-T3s"/>
                         <segue destination="ob2-Ly-t0X" kind="show" identifier="Register" id="rVB-FJ-jsq"/>
+                        <segue destination="h0w-I7-G7S" kind="show" identifier="ForgotPassword" id="htK-RH-Psy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuj-gF-hF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-969" y="1013"/>
+            <point key="canvasLocation" x="-970.39999999999998" y="1012.4437781109445"/>
         </scene>
         <!--New Password View Controller-->
         <scene sceneID="OHL-2s-rEM">
@@ -445,15 +619,11 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="zNs-0q-uuT" id="gPt-wp-VrQ"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gk-CI-wBQ">
                                 <rect key="frame" x="87" y="95" width="200" height="30"/>
                                 <state key="normal" title="Set Password"/>
                                 <connections>
-                                    <action selector="loginClicked" destination="zNs-0q-uuT" eventType="touchUpInside" id="j3R-jr-Lw8"/>
                                     <action selector="submitPasswordClicked" destination="jg2-DV-GmJ" eventType="touchUpInside" id="IeH-uC-eKy"/>
                                 </connections>
                             </button>

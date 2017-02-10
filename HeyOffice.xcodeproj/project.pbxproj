@@ -25,6 +25,8 @@
 		EFBC90391E4C7F8E00FE15D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */; };
 		EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */; };
 		EFBC903D1E4D7F2900FE15D1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */; };
+		EFBC903F1E4D980700FE15D1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */; };
+		EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmRegistrationViewController.swift; sourceTree = "<group>"; };
 		EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */,
 				EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */,
 				EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */,
+				EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */,
+				EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -269,12 +275,14 @@
 			files = (
 				EF8A79301E4384190096AF45 /* SecondViewController.swift in Sources */,
 				EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */,
+				EFBC903F1E4D980700FE15D1 /* ForgotPasswordViewController.swift in Sources */,
 				EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */,
 				EFBC90391E4C7F8E00FE15D1 /* RegisterViewController.swift in Sources */,
 				EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */,
 				EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */,
 				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
+				EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */,
 				EFBC903D1E4D7F2900FE15D1 /* NewPasswordViewController.swift in Sources */,
 				EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */,
 			);
