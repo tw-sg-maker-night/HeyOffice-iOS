@@ -24,6 +24,7 @@
 		EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */; };
 		EFBC90391E4C7F8E00FE15D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */; };
 		EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */; };
+		EFBC903D1E4D7F2900FE15D1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmRegistrationViewController.swift; sourceTree = "<group>"; };
+		EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */,
 				EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */,
 				EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */,
+				EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */,
 				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
+				EFBC903D1E4D7F2900FE15D1 /* NewPasswordViewController.swift in Sources */,
 				EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

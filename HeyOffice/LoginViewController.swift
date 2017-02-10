@@ -47,10 +47,10 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
                 self.messageLabel.text = error.userInfo["message"] as! String?
             }
         } else {
-            self.usernameField.text = nil
-            self.dismiss(animated: true, completion: { 
-                print("Login view dismissed")
-            })
+            DispatchQueue.main.async {
+                self.usernameField.text = nil
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

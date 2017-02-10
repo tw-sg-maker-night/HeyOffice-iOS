@@ -39,14 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
     
     func startPasswordAuthentication() -> AWSCognitoIdentityPasswordAuthentication {
         print("startPasswordAuthentication")
-        
         let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! UINavigationController
-        
-        self.window?.rootViewController?.present(navigationController, animated: true, completion: {
-            print("Login View Presentation Complete")
-        })
-        
+        DispatchQueue.main.async {
+            self.window?.rootViewController?.present(navigationController, animated: true, completion: nil)
+        }
         return navigationController.viewControllers[0] as! LoginViewController
+    }
+    
+    func startNewPasswordRequired() -> AWSCognitoIdentityNewPasswordRequired {
+        print("startNewPasswordRequired")
+        let newPasswordController = self.storyboard?.instantiateViewController(withIdentifier: "NewPassword") as! NewPasswordViewController
+        DispatchQueue.main.async {
+            self.window?.rootViewController?.present(newPasswordController, animated: true, completion: nil)
+        }
+        return newPasswordController
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
