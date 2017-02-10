@@ -35,11 +35,6 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         print("LoginViewController.getDetails")
         
         self.passwordAuthenticationCompletion = passwordAuthenticationCompletionSource;
-        DispatchQueue.main.async {
-            if self.usernameField.text == nil {
-               self.usernameField.text = authenticationInput.lastKnownUsername
-            }
-        }
     }
     
     func didCompleteStepWithError(_ error: Error?) {
@@ -68,6 +63,11 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         
         let result = AWSCognitoIdentityPasswordAuthenticationDetails(username: self.usernameField.text!, password: self.passwordField.text!)
         self.passwordAuthenticationCompletion?.set(result: result)
+    }
+    
+    @IBAction func registerClicked() {
+        print("registerClicked")
+        self.performSegue(withIdentifier: "Register", sender: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

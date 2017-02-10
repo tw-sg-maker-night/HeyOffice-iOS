@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("checking user is logged in...")        
+        print("checking user is logged in...")
         self.user?.getSession().continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserSession>) -> Any? in
             print("TabBarController.getSession task completed")
 

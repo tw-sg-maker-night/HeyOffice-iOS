@@ -22,6 +22,8 @@
 		EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */; };
 		EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90341E4AB01300FE15D1 /* TabBarController.swift */; };
 		EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */; };
+		EFBC90391E4C7F8E00FE15D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */; };
+		EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFBC90341E4AB01300FE15D1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmRegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 				EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */,
 				EFBC90341E4AB01300FE15D1 /* TabBarController.swift */,
 				EFBC90361E4AEFEE00FE15D1 /* SettingsViewController.swift */,
+				EFBC90381E4C7F8E00FE15D1 /* RegisterViewController.swift */,
+				EFBC903A1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -261,7 +267,9 @@
 				EF8A79301E4384190096AF45 /* SecondViewController.swift in Sources */,
 				EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */,
 				EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */,
+				EFBC90391E4C7F8E00FE15D1 /* RegisterViewController.swift in Sources */,
 				EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */,
+				EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */,
 				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
 				EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */,

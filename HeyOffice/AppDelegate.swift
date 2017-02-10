@@ -40,13 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
     func startPasswordAuthentication() -> AWSCognitoIdentityPasswordAuthentication {
         print("startPasswordAuthentication")
         
-        let loginController = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! UINavigationController
         
-        self.window?.rootViewController?.present(loginController, animated: true, completion: {
+        self.window?.rootViewController?.present(navigationController, animated: true, completion: {
             print("Login View Presentation Complete")
         })
         
-        return loginController
+        return navigationController.viewControllers[0] as! LoginViewController
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
