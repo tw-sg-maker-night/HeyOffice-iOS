@@ -15,10 +15,41 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var messageLabel: UILabel!
     
+    @IBOutlet var baselineConstraint: NSLayoutConstraint!
+    
     var passwordAuthenticationCompletion: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        print("keyboardWillShow")
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.baselineConstraint.constant = keyboardSize.size.height
+            let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+            UIView.animate(withDuration: duration, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        print("keyboardWillHide")
+        if let _ = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.baselineConstraint.constant = 20
+            let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+            UIView.animate(withDuration: duration, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +59,6 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func getDetails(_ authenticationInput: AWSCognitoIdentityPasswordAuthenticationInput, passwordAuthenticationCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>) {
