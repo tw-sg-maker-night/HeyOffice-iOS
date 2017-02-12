@@ -177,7 +177,7 @@
                                 <rect key="frame" x="87" y="57" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="ob2-Ly-t0X" id="r33-Wp-rJK"/>
                                 </connections>
@@ -265,7 +265,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-Jr-lfM">
                                 <rect key="frame" x="88" y="95" width="200" height="30"/>
@@ -338,7 +338,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="y5z-df-nAp" id="Kvu-hR-vHK"/>
                                 </connections>
@@ -414,7 +414,7 @@
         <!--Confirm Registration View Controller-->
         <scene sceneID="fXM-ij-tfA">
             <objects>
-                <viewController id="qjb-sq-WOq" customClass="ConfirmRegistrationViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmRegistration" id="qjb-sq-WOq" customClass="ConfirmRegistrationViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mrf-26-cab"/>
                         <viewControllerLayoutGuide type="bottom" id="yZe-7c-ZOY"/>
@@ -433,7 +433,7 @@
                                 <rect key="frame" x="87" y="57" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="qjb-sq-WOq" id="Pt7-nj-UO8"/>
                                 </connections>
@@ -515,7 +515,7 @@
                                 <rect key="frame" x="87" y="57" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="zNs-0q-uuT" id="ozT-w5-mqa"/>
                                 </connections>

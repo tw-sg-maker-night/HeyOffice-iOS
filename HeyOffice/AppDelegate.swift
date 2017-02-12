@@ -55,6 +55,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         return newPasswordController
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("application:openUrl")
+        if url.scheme == "heyoffice" {
+            let command = url.host
+            if command == "confirm_registration" {
+                if let navController = self.window?.rootViewController?.presentedViewController as? UINavigationController {
+                    let params = url.query!.parametersFromQueryString
+                    let code = params["code"]
+                    let username = params["username"]
+                    if let confirmRegistrationController = navController.topViewController as? ConfirmRegistrationViewController {
+                        // Already visible
+                        confirmRegistrationController.codeField?.text = code
+                        return true
+                    } else {
+                        // Display confirm view
+                        let controller = initConfirmRegistrationController(username: username!, code: code!)
+                        navController.pushViewController(controller, animated: false)
+                    }
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func initConfirmRegistrationController(username: String, code: String) -> ConfirmRegistrationViewController {
+        let confirmRegistrationController = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmRegistration") as! ConfirmRegistrationViewController
+        confirmRegistrationController.user = AWSCognitoIdentityUserPool(forKey: "UserPool").getUser(username)
+        confirmRegistrationController.initialCodeValue = code
+        return confirmRegistrationController
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -13,8 +13,10 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
     
     var user: AWSCognitoIdentityUser!
     
-    @IBOutlet var emailField: UITextField!
-    @IBOutlet var codeField: UITextField!
+    var initialCodeValue: String?
+    
+    @IBOutlet var emailField: UITextField?
+    @IBOutlet var codeField: UITextField?
     @IBOutlet var messageLabel: UILabel!
     
     override func viewDidLoad() {
@@ -24,8 +26,14 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.emailField.text = self.user.username
+        self.codeField?.text = self.initialCodeValue
+        self.emailField?.text = self.user.username
         self.messageLabel.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.codeField?.text = self.initialCodeValue
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,7 +43,7 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmClicked() {
         print("confirmClicked")
         
-        self.user.confirmSignUp(self.codeField.text!, forceAliasCreation: true)
+        self.user.confirmSignUp(self.codeField!.text!, forceAliasCreation: true)
             .continueWith { (task: AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse>) -> Any? in
                 if let error = task.error as? NSError {
                     DispatchQueue.main.async {

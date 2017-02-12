@@ -27,6 +27,7 @@
 		EFBC903D1E4D7F2900FE15D1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */; };
 		EFBC903F1E4D980700FE15D1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */; };
 		EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */; };
+		EFBC90441E4E147F00FE15D1 /* String+HeyOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HeyOffice.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		EF8A792A1E4384190096AF45 /* HeyOffice */ = {
 			isa = PBXGroup;
 			children = (
+				EFBC90421E4E147100FE15D1 /* Extensions */,
 				EFBC90271E4AABAB00FE15D1 /* Controllers */,
 				EF8A792B1E4384190096AF45 /* AppDelegate.swift */,
 				EFBC90301E4AAD9900FE15D1 /* Constants.swift */,
@@ -165,6 +168,14 @@
 				EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFBC90421E4E147100FE15D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				EFBC90371E4AEFEE00FE15D1 /* SettingsViewController.swift in Sources */,
 				EFBC90391E4C7F8E00FE15D1 /* RegisterViewController.swift in Sources */,
 				EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */,
+				EFBC90441E4E147F00FE15D1 /* String+HeyOffice.swift in Sources */,
 				EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */,
 				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
@@ -429,6 +441,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = HeyOffice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twsg.HeyOffice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,6 +459,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = HeyOffice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twsg.HeyOffice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
