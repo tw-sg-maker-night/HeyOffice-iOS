@@ -28,6 +28,8 @@
 		EFBC903F1E4D980700FE15D1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */; };
 		EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */; };
 		EFBC90441E4E147F00FE15D1 /* String+HeyOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */; };
+		EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90471E5200E000FE15D1 /* AWSLex.framework */; };
+		EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90471E5200E000FE15D1 /* AWSLex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */,
 				EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
 				EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */,
 			);
@@ -79,6 +82,7 @@
 		EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HeyOffice.swift"; sourceTree = "<group>"; };
+		EFBC90471E5200E000FE15D1 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLex.framework; path = Carthage/Build/iOS/AWSLex.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */,
 				EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */,
 			);
@@ -164,6 +169,7 @@
 		EFBC902F1E4AAD3800FE15D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFBC90471E5200E000FE15D1 /* AWSLex.framework */,
 				EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */,
 				EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */,
 			);

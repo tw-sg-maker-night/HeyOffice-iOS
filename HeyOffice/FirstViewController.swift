@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import AWSLex
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, AWSLexVoiceButtonDelegate {
 
+    @IBOutlet weak var voiceButton: AWSLexVoiceButton!
+    @IBOutlet weak var outputLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.voiceButton.delegate = self
+        self.outputLabel.text = ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func voiceButton(_ button: AWSLexVoiceButton, on response: AWSLexVoiceButtonResponse) {
+        DispatchQueue.main.async(execute: {
+            print("on text output \(response.outputText)")
+            self.outputLabel.text = response.outputText
+        })
     }
-
+    
+    public func voiceButton(_ button: AWSLexVoiceButton, onError error: Error) {
+        print("error \(error)")
+    }
 
 }
 

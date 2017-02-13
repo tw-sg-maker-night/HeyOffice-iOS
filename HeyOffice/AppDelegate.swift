@@ -9,6 +9,7 @@
 import UIKit
 import AWSCore
 import AWSCognitoIdentityProvider
+import AWSLex
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
@@ -31,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         
         let pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
         pool.delegate = self
+        
+        //setup lex
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: CognitoIdentityUserPoolRegion, identityPoolId: CognitoIdentityId)
+        let configuration = AWSServiceConfiguration(region: CognitoIdentityUserPoolRegion, credentialsProvider: credentialsProvider)
+        let chatConfig = AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: BotName, botAlias: BotAlias)
+        AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "AWSLexVoiceButton")
         
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         

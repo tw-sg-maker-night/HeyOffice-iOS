@@ -13,3 +13,6 @@ let CognitoIdentityUserPoolRegion = AWSRegionType.USEast1
 let CognitoIdentityUserPoolAppClientId = ""
 let CognitoIdentityUserPoolAppClientSecret = ""
 let CognitoIdentityUserPoolId = ""
+let CognitoIdentityId = ""
+let BotName = "HeyOffice"
+let BotAlias = "$LATEST"
