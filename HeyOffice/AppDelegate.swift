@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         //setup service config
         let serviceConfig = AWSServiceConfiguration(region: CognitoIdentityUserPoolRegion, credentialsProvider: nil)
         
-        //create a pool
+        //create a user pool
         let userPoolConfig = AWSCognitoIdentityUserPoolConfiguration(clientId: CognitoIdentityUserPoolAppClientId, clientSecret: CognitoIdentityUserPoolAppClientSecret, poolId: CognitoIdentityUserPoolId)
         
         AWSCognitoIdentityUserPool.register(with: serviceConfig, userPoolConfiguration: userPoolConfig, forKey: "UserPool")
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         pool.delegate = self
         
         //setup lex
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: CognitoIdentityUserPoolRegion, identityPoolId: CognitoIdentityId)
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: CognitoIdentityUserPoolRegion, identityPoolId: CognitoIdentityPoolId, identityProviderManager: pool)
         let configuration = AWSServiceConfiguration(region: CognitoIdentityUserPoolRegion, credentialsProvider: credentialsProvider)
         let chatConfig = AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: BotName, botAlias: BotAlias)
         AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "AWSLexVoiceButton")
