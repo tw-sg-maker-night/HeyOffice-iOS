@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSCore
+import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSLex
 
@@ -33,11 +34,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         let pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
         pool.delegate = self
         
-        //setup lex
+        // setup credentials provider
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType: CognitoIdentityUserPoolRegion, identityPoolId: CognitoIdentityPoolId, identityProviderManager: pool)
+        
+        // setup default aws config (with credentials provider)
         let configuration = AWSServiceConfiguration(region: CognitoIdentityUserPoolRegion, credentialsProvider: credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        // setup lex
         let chatConfig = AWSLexInteractionKitConfig.defaultInteractionKitConfig(withBotName: BotName, botAlias: BotAlias)
         AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: chatConfig, forKey: "AWSLexVoiceButton")
+        
+        // setup dynamo db
+        let dynamoDBMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        AWSDynamoDBObjectMapper.register(with: configuration!, objectMapperConfiguration: dynamoDBMapperConfig, forKey: "UserDetails")
         
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         

@@ -124,42 +124,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Settings View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="flq-G7-Ab8">
-                                <rect key="frame" x="79" y="300" width="218" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SettingsViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbN-N2-mmI">
-                                <rect key="frame" x="78" y="350" width="219" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-na-ckA">
-                                <rect key="frame" x="163" y="375" width="48" height="30"/>
+                                <rect key="frame" x="311" y="34" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutClicked" destination="fPW-e7-Jc4" eventType="touchUpInside" id="xDS-u4-0pe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="flq-G7-Ab8">
+                                <rect key="frame" x="122" y="28" width="131" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cp-R1-pSt">
+                                <rect key="frame" x="16" y="78" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uGF-xs-Pj9">
+                                <rect key="frame" x="16" y="107" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4Z-06-bli">
+                                <rect key="frame" x="161" y="145" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateClicked" destination="fPW-e7-Jc4" eventType="touchUpInside" id="6BV-ox-03h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V9M-aT-GmW" firstAttribute="top" secondItem="kKU-na-ckA" secondAttribute="bottom" constant="213" id="79B-gR-VMl"/>
-                            <constraint firstItem="kKU-na-ckA" firstAttribute="centerX" secondItem="lQO-Lf-mSb" secondAttribute="centerX" id="9FH-k8-K3H"/>
-                            <constraint firstItem="nbN-N2-mmI" firstAttribute="centerX" secondItem="kKU-na-ckA" secondAttribute="centerX" id="LEV-vv-acq"/>
-                            <constraint firstItem="flq-G7-Ab8" firstAttribute="trailing" secondItem="nbN-N2-mmI" secondAttribute="trailing" id="X4s-c7-TrT"/>
-                            <constraint firstItem="kKU-na-ckA" firstAttribute="top" secondItem="nbN-N2-mmI" secondAttribute="bottom" constant="8" symbolic="YES" id="oK0-cL-wme"/>
-                            <constraint firstItem="nbN-N2-mmI" firstAttribute="top" secondItem="flq-G7-Ab8" secondAttribute="bottom" constant="8" symbolic="YES" id="qJq-Ya-dKO"/>
+                            <constraint firstItem="kKU-na-ckA" firstAttribute="trailing" secondItem="lQO-Lf-mSb" secondAttribute="trailingMargin" id="6yz-Z6-dKk"/>
+                            <constraint firstItem="kKU-na-ckA" firstAttribute="leading" secondItem="flq-G7-Ab8" secondAttribute="trailing" constant="58" id="h3m-zd-kBG"/>
+                            <constraint firstItem="flq-G7-Ab8" firstAttribute="top" secondItem="Tol-Yy-YbZ" secondAttribute="bottom" constant="8" symbolic="YES" id="k13-8c-BAv"/>
+                            <constraint firstItem="kKU-na-ckA" firstAttribute="centerY" secondItem="flq-G7-Ab8" secondAttribute="centerY" id="rEZ-So-bwG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="vjD-Xy-Ixb"/>
+                    <connections>
+                        <outlet property="nameField" destination="uGF-xs-Pj9" id="Gi9-eq-5mP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fM-7L-Wyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="7"/>
+            <point key="canvasLocation" x="1724" y="6.746626686656672"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="6si-Kd-vPY">
