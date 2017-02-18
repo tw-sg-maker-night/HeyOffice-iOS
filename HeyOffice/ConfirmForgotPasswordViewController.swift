@@ -16,14 +16,20 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
     @IBOutlet var messageLabel: UILabel!
     
     var user: AWSCognitoIdentityUser?
+    var dismissKeyboardGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.messageLabel.text = ""
+        
+        self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
+        self.dismissKeyboardGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboardGesture)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     func validate() -> Bool {

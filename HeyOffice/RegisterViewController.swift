@@ -17,11 +17,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var pool: AWSCognitoIdentityUserPool?
     var user: AWSCognitoIdentityUser?
+    var dismissKeyboardGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
+        
+        self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
+        self.dismissKeyboardGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboardGesture)
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

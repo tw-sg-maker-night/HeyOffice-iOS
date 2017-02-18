@@ -14,13 +14,17 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var messageLabel: UILabel!
-    
     @IBOutlet var baselineConstraint: NSLayoutConstraint!
     
     var passwordAuthenticationCompletion: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>?
+    var dismissKeyboardGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
+        self.dismissKeyboardGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboardGesture)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -28,6 +32,10 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     func keyboardWillShow(notification: NSNotification) {

@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
     var pool: AWSCognitoIdentityUserPool!
     var credentialsProvider: AWSCognitoCredentialsProvider!
     var dynamoDBObjectMapper: AWSDynamoDBObjectMapper!
+    var dismissKeyboardGesture: UITapGestureRecognizer!
     
     var userDetails: UserDetails?
     @IBOutlet var nameField: UITextField!
@@ -25,6 +26,14 @@ class SettingsViewController: UIViewController {
         self.pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
         self.credentialsProvider = AWSServiceManager.default().defaultServiceConfiguration.credentialsProvider as! AWSCognitoCredentialsProvider
         self.dynamoDBObjectMapper = AWSDynamoDBObjectMapper(forKey: "UserDetails")
+        
+        self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
+        self.dismissKeyboardGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboardGesture)
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

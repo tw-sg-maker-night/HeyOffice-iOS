@@ -15,9 +15,18 @@ class NewPasswordViewController: UIViewController, AWSCognitoIdentityNewPassword
     @IBOutlet var messageLabel: UILabel!
     
     var passwordRequiredCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityNewPasswordRequiredDetails>?
+    var dismissKeyboardGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
+        self.dismissKeyboardGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboardGesture)
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

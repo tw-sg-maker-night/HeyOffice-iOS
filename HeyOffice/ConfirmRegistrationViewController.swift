@@ -12,8 +12,8 @@ import AWSCognitoIdentityProvider
 class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
     
     var user: AWSCognitoIdentityUser!
-    
     var initialCodeValue: String?
+    var dismissKeyboardGesture: UITapGestureRecognizer!
     
     @IBOutlet var emailField: UITextField?
     @IBOutlet var codeField: UITextField?
@@ -21,6 +21,14 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
+        self.dismissKeyboardGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboardGesture)
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
