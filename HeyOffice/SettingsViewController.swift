@@ -9,6 +9,7 @@
 import UIKit
 import AWSCognitoIdentityProvider
 import AWSDynamoDB
+import PKHUD
 
 class SettingsViewController: UIViewController {
     
@@ -39,15 +40,20 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        HUD.show(.progress)
         dynamoDBObjectMapper.load(UserDetails.self, hashKey: self.credentialsProvider.identityId!, rangeKey:nil)
             .continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
                 if let error = task.error as? NSError {
                     print("The request failed. Error: \(error)")
                     self.userDetails = UserDetails()
+                    DispatchQueue.main.async {
+                        HUD.flash(.error, delay: 0.5)
+                    }
                 } else if let result = task.result as? UserDetails {
                     self.userDetails = result
                     DispatchQueue.main.async {
                         self.nameField.text = result.name
+                        HUD.hide()
                     }
                 }
                 return nil

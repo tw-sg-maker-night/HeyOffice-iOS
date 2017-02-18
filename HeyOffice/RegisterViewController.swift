@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSCognitoIdentityProvider
+import PKHUD
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -85,6 +86,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        HUD.show(.progress)
         var attributes = [AWSCognitoIdentityUserAttributeType]()
         
         let emailAttribute = AWSCognitoIdentityUserAttributeType(name: "email", value: emailField.text!)
@@ -114,23 +116,24 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     func displaySuccess() {
         print("displaySuccess")
-        let alertController = UIAlertController(title: "Sign Up", message: "Success! A confirmation email has been sent.", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
+        HUD.flash(.labeledSuccess(title: "Success", subtitle: "A confirmation email has been sent."), onView: self.view, delay: 1.0) { flag in
             self.performSegue(withIdentifier: "ConfirmRegistration", sender: self)
-        })
-        self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func displayError(_ error: NSError) {
         print("displayError")
+        HUD.flash(.error, delay: 0.5)
         let type = error.userInfo["__type"]
         let message = error.userInfo["message"] as! String
         print("Type = \(type)")
         print("Message = \(message)")
         
-        let alertController = UIAlertController(title: "Registration Failed", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        if message.contains("'password'") && message.contains("Member must have length greater than or equal to 6") {
+            self.messageLabel.text = "Password must be at least 6 characters"
+        } else {
+            self.messageLabel.text = message
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

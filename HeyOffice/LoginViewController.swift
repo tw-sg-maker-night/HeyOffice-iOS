@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSCognitoIdentityProvider
+import PKHUD
 
 class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentication, UITextFieldDelegate {
     
@@ -82,10 +83,12 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
             print("UserInfo.__type = \(error.userInfo["__type"])")
             print("UserInfo.message = \(error.userInfo["message"])")
             DispatchQueue.main.async {
+                HUD.flash(.error, delay: 0.5)
                 self.messageLabel.text = error.userInfo["message"] as! String?
             }
         } else {
             DispatchQueue.main.async {
+                HUD.flash(.success, delay: 0.5)
                 self.usernameField.text = nil
                 self.dismiss(animated: true, completion: nil)
             }
@@ -97,6 +100,7 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         print("username = \(self.usernameField.text)")
         print("password = \(self.passwordField.text)")
         
+        HUD.show(.progress)
         self.messageLabel.text = ""
         
         let result = AWSCognitoIdentityPasswordAuthenticationDetails(username: self.usernameField.text!, password: self.passwordField.text!)

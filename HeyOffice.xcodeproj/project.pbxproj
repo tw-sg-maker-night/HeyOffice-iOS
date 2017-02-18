@@ -33,6 +33,8 @@
 		EFBC904F1E56877400FE15D1 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC904E1E56877400FE15D1 /* UserDetails.swift */; };
 		EFBC90511E568C0400FE15D1 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; };
 		EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; };
+		EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */,
+				EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */,
 				EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
 				EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */,
 				EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */,
@@ -90,6 +93,7 @@
 		EFBC904A1E56853C00FE15D1 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Carthage/Build/iOS/AWSCognito.framework; sourceTree = "<group>"; };
 		EFBC904E1E56877400FE15D1 /* UserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Carthage/Build/iOS/AWSDynamoDB.framework; sourceTree = "<group>"; };
+		EFBC90531E585D6900FE15D1 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */,
+				EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */,
 				EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */,
 				EFBC90511E568C0400FE15D1 /* AWSDynamoDB.framework in Frameworks */,
@@ -178,6 +183,7 @@
 		EFBC902F1E4AAD3800FE15D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFBC90531E585D6900FE15D1 /* PKHUD.framework */,
 				EFBC90471E5200E000FE15D1 /* AWSLex.framework */,
 				EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */,
 				EFBC904A1E56853C00FE15D1 /* AWSCognito.framework */,

@@ -1,1 +1,2 @@
 github "aws/aws-sdk-ios"
+github "pkluz/PKHUD" ~> 4.0
