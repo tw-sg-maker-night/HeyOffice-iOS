@@ -41,37 +41,51 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.messageLabel.text = ""
-        
-        self.nameField.text = ""
-        self.nameField.placeholder = "Loading..."
-        self.nameField.isEnabled = false
-
-        dynamoDBObjectMapper.load(UserDetails.self, hashKey: self.credentialsProvider.identityId!, rangeKey:nil)
+        disableNameField()
+        self.credentialsProvider.getIdentityId().continueWith(block: { (task: AWSTask<NSString>) -> Any? in
+            if let error = task.error as? NSError {
+                DispatchQueue.main.async {
+                    self.messageLabel.text = AWSErrorMessageParser.parse(error)
+                }
+            } else {
+                self.loadUserDetails(identityId: task.result! as String)
+            }
+            return nil
+        })
+    }
+    
+    func loadUserDetails(identityId: String) {
+        dynamoDBObjectMapper.load(UserDetails.self, hashKey: identityId, rangeKey:nil)
             .continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-                if let error = task.error as? NSError {
-                    print("The request failed. Error: \(error)")
-                    DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    if let error = task.error as? NSError {
                         self.nameField.placeholder = "Error"
                         self.messageLabel.text = AWSErrorMessageParser.parse(error)
+                        return
                     }
-                } else if let result = task.result as? UserDetails {
-                    self.userDetails = result
-                    DispatchQueue.main.async {
-                        self.nameField.text = result.name
-                        self.nameField.placeholder = "Name"
-                        self.nameField.isEnabled = true
-                    }
-                } else {
-                    DispatchQueue.main.async {
+                    
+                    if let result = task.result as? UserDetails {
+                        self.userDetails = result
+                    } else {
                         self.userDetails = UserDetails()
-                        self.userDetails?.userId = self.credentialsProvider.identityId!
-                        self.nameField.text = ""
-                        self.nameField.placeholder = "Name"
-                        self.nameField.isEnabled = true
+                        self.userDetails?.userId = self.credentialsProvider.identityId
                     }
+                    self.enableNameField()
                 }
                 return nil
             })
+    }
+    
+    func disableNameField() {
+        self.nameField.text = ""
+        self.nameField.placeholder = "Loading..."
+        self.nameField.isEnabled = false
+    }
+    
+    func enableNameField() {
+        self.nameField.text = self.userDetails?.name
+        self.nameField.placeholder = "Name"
+        self.nameField.isEnabled = true
     }
     
     @IBAction func logoutClicked() {
