@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //setup logging
-        AWSLogger.default().logLevel = AWSLogLevel.verbose
+        AWSLogger.default().logLevel = AWSLogLevel.debug
 
         //setup service config
         let serviceConfig = AWSServiceConfiguration(region: CognitoIdentityUserPoolRegion, credentialsProvider: nil)
