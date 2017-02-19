@@ -79,12 +79,9 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     func didCompleteStepWithError(_ error: Error?) {
         print("LoginViewController.didCompleteStepWithError")
         if let error = error as? NSError {
-            print("Error = \(error.localizedDescription)")
-            print("UserInfo.__type = \(error.userInfo["__type"])")
-            print("UserInfo.message = \(error.userInfo["message"])")
             DispatchQueue.main.async {
                 HUD.flash(.error, delay: 0.5)
-                self.messageLabel.text = error.userInfo["message"] as! String?
+                self.messageLabel.text = AWSErrorMessageParser.parse(error)
             }
         } else {
             DispatchQueue.main.async {
@@ -95,14 +92,27 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         }
     }
     
+    func valid() -> Bool {
+        if self.usernameField.text == nil || self.usernameField.text == "" {
+            self.messageLabel.text = "Email or username required"
+            return false
+        }
+        
+        if self.passwordField.text == nil || self.passwordField.text == "" {
+            self.messageLabel.text = "Password required"
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func loginClicked() {
         print("loginClicked")
-        print("username = \(self.usernameField.text)")
-        print("password = \(self.passwordField.text)")
-        
-        HUD.show(.progress)
         self.messageLabel.text = ""
-        
+        if !valid() {
+            return
+        }
+        HUD.show(.progress)
         let result = AWSCognitoIdentityPasswordAuthenticationDetails(username: self.usernameField.text!, password: self.passwordField.text!)
         self.passwordAuthenticationCompletion?.set(result: result)
     }

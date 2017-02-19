@@ -48,8 +48,25 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    func valid() -> Bool {
+        if self.codeField?.text == nil || self.codeField?.text == "" {
+            self.messageLabel.text = "Confirmation code required"
+            return false
+        }
+        
+        if self.emailField?.text == nil || self.emailField?.text == "" {
+            self.messageLabel.text = "Email required"
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func confirmClicked() {
         print("confirmClicked")
+        if !valid() {
+            return
+        }
         
         self.user.confirmSignUp(self.codeField!.text!, forceAliasCreation: true)
             .continueWith { (task: AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse>) -> Any? in

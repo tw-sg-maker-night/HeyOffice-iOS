@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSCognitoIdentityProvider
+import PKHUD
 
 class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     
@@ -16,6 +17,7 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
     @IBOutlet var messageLabel: UILabel!
     
     var user: AWSCognitoIdentityUser?
+    var initialCodeValue: String?
     var dismissKeyboardGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
@@ -28,20 +30,25 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
         self.view.addGestureRecognizer(dismissKeyboardGesture)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.codeField?.text = self.initialCodeValue
+    }
+    
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
-    func validate() -> Bool {
+    func valid() -> Bool {
         self.messageLabel.text = ""
         
         if self.codeField.text == nil || self.codeField.text == "" {
-            self.messageLabel.text = "Code required"
+            self.messageLabel.text = "Confirmation code required"
             return false
         }
         
         if self.passwordField.text == nil || self.passwordField.text == "" {
-            self.messageLabel.text = "Password required"
+            self.messageLabel.text = "New password required"
             return false
         }
         
@@ -50,10 +57,10 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func updatePasswordClicked() {
         print("updatePasswordClicked")
-        if !validate() {
+        if !valid() {
             return
         }
-        
+        HUD.show(.progress)
         self.user?.confirmForgotPassword(self.codeField.text!, password: self.passwordField.text!)
             .continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserConfirmForgotPasswordResponse>) -> Any? in
                 DispatchQueue.main.async {
@@ -68,12 +75,14 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
     }
     
     func handleError(_ error: NSError) {
-        let message = error.userInfo["message"] as! String
-        self.messageLabel.text = message
+        self.messageLabel.text = AWSErrorMessageParser.parse(error)
+        HUD.flash(.error, delay: 0.5)
     }
     
     func handleSuccess() {
-        let _ = self.navigationController?.popToRootViewController(animated: true)
+        HUD.flash(.success, delay: 0.5) { flag in
+            let _ = self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

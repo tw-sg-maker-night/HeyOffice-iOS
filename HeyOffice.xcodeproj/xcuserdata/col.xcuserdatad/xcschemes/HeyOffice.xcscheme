@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF8A793D1E4384190096AF45"
+               BuildableName = "HeyOfficeTests.xctest"
+               BlueprintName = "HeyOfficeTests"
+               ReferencedContainer = "container:HeyOffice.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EF8A79271E4384190096AF45"
+            BuildableName = "HeyOffice.app"
+            BlueprintName = "HeyOffice"
+            ReferencedContainer = "container:HeyOffice.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

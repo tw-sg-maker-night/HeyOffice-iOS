@@ -93,15 +93,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
                     return true
                 }
             }
+            else if command == "confirm_forgot_password" {
+                if let navController = self.window?.rootViewController?.presentedViewController as? UINavigationController {
+                    let params = url.query!.parametersFromQueryString
+                    let code = params["code"]
+                    let username = params["username"]
+                    if let confirmForgotPasswordController = navController.topViewController as? ConfirmForgotPasswordViewController {
+                        // Already visible
+                        confirmForgotPasswordController.codeField?.text = code
+                        return true
+                    } else {
+                        // Display confirm view
+                        let controller = initConfirmForgotPasswordController(username: username!, code: code!)
+                        navController.pushViewController(controller, animated: false)
+                    }
+                    return true
+                }
+            }
         }
         return false
     }
     
     func initConfirmRegistrationController(username: String, code: String) -> ConfirmRegistrationViewController {
-        let confirmRegistrationController = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmRegistration") as! ConfirmRegistrationViewController
-        confirmRegistrationController.user = AWSCognitoIdentityUserPool(forKey: "UserPool").getUser(username)
-        confirmRegistrationController.initialCodeValue = code
-        return confirmRegistrationController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmRegistration") as! ConfirmRegistrationViewController
+        controller.user = AWSCognitoIdentityUserPool(forKey: "UserPool").getUser(username)
+        controller.initialCodeValue = code
+        return controller
+    }
+    
+    func initConfirmForgotPasswordController(username: String, code: String) -> ConfirmForgotPasswordViewController {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmForgotPassword") as! ConfirmForgotPasswordViewController
+        controller.user = AWSCognitoIdentityUserPool(forKey: "UserPool").getUser(username)
+        controller.initialCodeValue = code
+        return controller
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

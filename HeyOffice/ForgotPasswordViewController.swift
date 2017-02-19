@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSCognitoIdentityProvider
+import PKHUD
 
 class ForgotPasswordViewController: UIViewController {
     
@@ -41,14 +42,23 @@ class ForgotPasswordViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func forgotPasswordClicked() {
-        print("forgotPasswordClicked")
+    func valid() -> Bool {
+        self.messageLabel.text = ""
         
         if self.emailField.text == nil || self.emailField.text == "" {
             self.messageLabel.text = "Email required"
-            return
+            return false
         }
         
+        return true
+    }
+    
+    @IBAction func forgotPasswordClicked() {
+        print("forgotPasswordClicked")
+        if !valid() {
+            return
+        }
+        HUD.show(.progress)        
         self.user = self.pool?.getUser(self.emailField.text!)
         self.user?.forgotPassword()
             .continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserForgotPasswordResponse>) -> Any? in
@@ -65,13 +75,15 @@ class ForgotPasswordViewController: UIViewController {
     
     func handleError(_ error: NSError) {
         print("ForgotPasswordViewController.handleError")
-        let message = error.userInfo["message"] as! String
-        self.messageLabel.text = message
+        self.messageLabel.text = AWSErrorMessageParser.parse(error)
+        HUD.flash(.error, delay: 0.5)
     }
     
     func handleSuccess() {
         print("ForgotPasswordViewController.handleSuccess")
-        self.performSegue(withIdentifier: "ConfirmForgotPassword", sender: self)
+        HUD.flash(.success, delay: 0.5) { flag in
+            self.performSegue(withIdentifier: "ConfirmForgotPassword", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

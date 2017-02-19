@@ -124,16 +124,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     func displayError(_ error: NSError) {
         print("displayError")
         HUD.flash(.error, delay: 0.5)
-        let type = error.userInfo["__type"]
-        let message = error.userInfo["message"] as! String
-        print("Type = \(type)")
-        print("Message = \(message)")
-        
-        if message.contains("'password'") && message.contains("Member must have length greater than or equal to 6") {
-            self.messageLabel.text = "Password must be at least 6 characters"
-        } else {
-            self.messageLabel.text = message
-        }
+        self.messageLabel.text = AWSErrorMessageParser.parse(error)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

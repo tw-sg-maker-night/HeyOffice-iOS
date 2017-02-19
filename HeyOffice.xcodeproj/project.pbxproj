@@ -35,6 +35,13 @@
 		EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; };
 		EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EFBC90571E591B7500FE15D1 /* AWSErrorMessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */; };
+		EFBC90591E591BB700FE15D1 /* AWSErrorMessageParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90581E591BB700FE15D1 /* AWSErrorMessageParserTests.swift */; };
+		EFBC905A1E5923AA00FE15D1 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; };
+		EFBC905B1E5923B100FE15D1 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90471E5200E000FE15D1 /* AWSLex.framework */; };
+		EFBC905C1E5923B500FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */; };
+		EFBC905D1E5923BF00FE15D1 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */; };
+		EFBC905E1E5923C200FE15D1 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,10 +97,11 @@
 		EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HeyOffice.swift"; sourceTree = "<group>"; };
 		EFBC90471E5200E000FE15D1 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLex.framework; path = Carthage/Build/iOS/AWSLex.framework; sourceTree = "<group>"; };
-		EFBC904A1E56853C00FE15D1 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Carthage/Build/iOS/AWSCognito.framework; sourceTree = "<group>"; };
 		EFBC904E1E56877400FE15D1 /* UserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Carthage/Build/iOS/AWSDynamoDB.framework; sourceTree = "<group>"; };
 		EFBC90531E585D6900FE15D1 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSErrorMessageParser.swift; sourceTree = "<group>"; };
+		EFBC90581E591BB700FE15D1 /* AWSErrorMessageParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSErrorMessageParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBC905B1E5923B100FE15D1 /* AWSLex.framework in Frameworks */,
+				EFBC905D1E5923BF00FE15D1 /* AWSCore.framework in Frameworks */,
+				EFBC905C1E5923B500FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				EFBC905A1E5923AA00FE15D1 /* PKHUD.framework in Frameworks */,
+				EFBC905E1E5923C200FE15D1 /* AWSDynamoDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +159,7 @@
 				EFBC90271E4AABAB00FE15D1 /* Controllers */,
 				EF8A792B1E4384190096AF45 /* AppDelegate.swift */,
 				EFBC90301E4AAD9900FE15D1 /* Constants.swift */,
+				EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */,
 				EF8A79311E4384190096AF45 /* Main.storyboard */,
 				EF8A79341E4384190096AF45 /* Assets.xcassets */,
 				EF8A79361E4384190096AF45 /* LaunchScreen.storyboard */,
@@ -158,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				EF8A79421E4384190096AF45 /* HeyOfficeTests.swift */,
+				EFBC90581E591BB700FE15D1 /* AWSErrorMessageParserTests.swift */,
 				EF8A79441E4384190096AF45 /* Info.plist */,
 			);
 			path = HeyOfficeTests;
@@ -186,7 +201,6 @@
 				EFBC90531E585D6900FE15D1 /* PKHUD.framework */,
 				EFBC90471E5200E000FE15D1 /* AWSLex.framework */,
 				EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */,
-				EFBC904A1E56853C00FE15D1 /* AWSCognito.framework */,
 				EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */,
 				EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */,
 			);
@@ -324,6 +338,7 @@
 				EFBC90441E4E147F00FE15D1 /* String+HeyOffice.swift in Sources */,
 				EFBC903B1E4CA00700FE15D1 /* ConfirmRegistrationViewController.swift in Sources */,
 				EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */,
+				EFBC90571E591B7500FE15D1 /* AWSErrorMessageParser.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
 				EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */,
 				EFBC904F1E56877400FE15D1 /* UserDetails.swift in Sources */,
@@ -336,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBC90591E591BB700FE15D1 /* AWSErrorMessageParserTests.swift in Sources */,
 				EF8A79431E4384190096AF45 /* HeyOfficeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +521,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9269KSNZG8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HeyOfficeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twsg.HeyOfficeTests;
@@ -520,6 +540,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9269KSNZG8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HeyOfficeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twsg.HeyOfficeTests;
