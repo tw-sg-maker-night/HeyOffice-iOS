@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Voice-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="SVR-8F-nlE" secondAttribute="leading" id="qba-jO-oV7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Voice" image="microphone" selectedImage="microphone" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="outputLabel" destination="SVR-8F-nlE" id="VAG-U0-I4d"/>
                         <outlet property="voiceButton" destination="WN3-lr-IBQ" id="0Ql-ki-HPB"/>
@@ -194,7 +194,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3Cp-R1-pSt" secondAttribute="trailing" id="wxR-9b-Dow"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="vjD-Xy-Ixb"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="user" selectedImage="user" id="vjD-Xy-Ixb"/>
                     <connections>
                         <outlet property="messageLabel" destination="5wH-by-BIz" id="06G-gB-H6F"/>
                         <outlet property="nameField" destination="uGF-xs-Pj9" id="Gi9-eq-5mP"/>
@@ -791,7 +791,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="fPW-e7-Jc4" kind="relationship" relationship="viewControllers" id="F87-zj-dV1"/>
                     </connections>
                 </tabBarController>
@@ -801,7 +800,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="microphone" width="16" height="28"/>
         <image name="second" width="30" height="30"/>
+        <image name="user" width="28" height="24"/>
     </resources>
 </document>

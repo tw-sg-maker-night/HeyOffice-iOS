@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSCognitoIdentityProvider
+import PKHUD
 
 class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
     
@@ -67,27 +68,25 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
         if !valid() {
             return
         }
-        
+        HUD.show(.progress)
         self.user.confirmSignUp(self.codeField!.text!, forceAliasCreation: true)
             .continueWith { (task: AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse>) -> Any? in
                 if let error = task.error as? NSError {
                     DispatchQueue.main.async {
-                        self.displayError(error)
+                        HUD.flash(.error, delay: 0.5)
+                        self.messageLabel.text = AWSErrorMessageParser.parse(error)
                     }
                 } else {
                     DispatchQueue.main.async {
+                        HUD.flash(.success, delay: 0.5)
+                        if let loginController = self.navigationController?.viewControllers.first as? LoginViewController {
+                            loginController.usernameField.text = self.emailField?.text
+                        }
                         let _ = self.navigationController?.popToRootViewController(animated: true)
                     }
                 }
                 return nil
             }
-    }
-    
-    func displayError(_ error: NSError) {
-        let message = error.userInfo["message"] as! String
-        let alertController = UIAlertController(title: "Confirm Code", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
     }
     
 }

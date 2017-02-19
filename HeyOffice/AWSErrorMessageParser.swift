@@ -11,8 +11,11 @@ import Foundation
 class AWSErrorMessageParser {
     
     class func parse(_ error: NSError) -> String {
-        let message = error.userInfo["message"] as! String
-        return message.components(separatedBy: ":").last!.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+        if let message = error.userInfo["message"] as? String {
+            return message.components(separatedBy: ":").last!.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+        } else {
+            return error.localizedDescription
+        }
     }
     
 }

@@ -12,12 +12,14 @@ import AWSCognitoIdentityProvider
 class TabBarController: UITabBarController {
     
     var pool: AWSCognitoIdentityUserPool?
+    var credentialsProvider: AWSCognitoCredentialsProvider!
     var user: AWSCognitoIdentityUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
+        self.credentialsProvider = AWSServiceManager.default().defaultServiceConfiguration.credentialsProvider as! AWSCognitoCredentialsProvider
         if self.user == nil {
             self.user = self.pool?.currentUser()
         }
@@ -30,6 +32,9 @@ class TabBarController: UITabBarController {
     
     func signOut() {
         user?.signOut()
+        credentialsProvider.invalidateCachedTemporaryCredentials()
+        credentialsProvider.clearKeychain()
+        credentialsProvider.clearCredentials()
         showVoiceCommandTab()
         checkIfLoggedIn()
     }

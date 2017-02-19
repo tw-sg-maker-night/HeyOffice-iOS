@@ -42,20 +42,32 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.messageLabel.text = ""
         
-        HUD.show(.progress)
+        self.nameField.text = ""
+        self.nameField.placeholder = "Loading..."
+        self.nameField.isEnabled = false
+
         dynamoDBObjectMapper.load(UserDetails.self, hashKey: self.credentialsProvider.identityId!, rangeKey:nil)
             .continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
                 if let error = task.error as? NSError {
                     print("The request failed. Error: \(error)")
-                    self.userDetails = UserDetails()
                     DispatchQueue.main.async {
-                        HUD.flash(.error, delay: 0.5)
+                        self.nameField.placeholder = "Error"
+                        self.messageLabel.text = AWSErrorMessageParser.parse(error)
                     }
                 } else if let result = task.result as? UserDetails {
                     self.userDetails = result
                     DispatchQueue.main.async {
                         self.nameField.text = result.name
-                        HUD.hide()
+                        self.nameField.placeholder = "Name"
+                        self.nameField.isEnabled = true
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.userDetails = UserDetails()
+                        self.userDetails?.userId = self.credentialsProvider.identityId!
+                        self.nameField.text = ""
+                        self.nameField.placeholder = "Name"
+                        self.nameField.isEnabled = true
                     }
                 }
                 return nil
@@ -72,7 +84,7 @@ class SettingsViewController: UIViewController {
     func valid() -> Bool {
         self.messageLabel.text = ""
         
-        if self.userDetails!.name == nil || self.userDetails!.name == "" {
+        if self.nameField!.text == nil || self.nameField!.text == "" {
             self.messageLabel.text = "Name required"
             return false
         }
