@@ -23,26 +23,29 @@ class TabBarController: UITabBarController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("TabBarController.viewWillAppear")
-        print("checking user is logged in...")
-        print("Is signed in = \(self.user?.isSignedIn)")
-        self.user?.getSession().continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserSession>) -> Any? in
-            print("TabBarController.getSession task completed")
-            
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoggedIn()
+    }
+    
+    func signOut() {
+        user?.signOut()
+        showVoiceCommandTab()
+        checkIfLoggedIn()
+    }
+    
+    func checkIfLoggedIn() {
+        user?.getSession().continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserSession>) -> Any? in
             if let error = task.error {
                 print("Error \(error.localizedDescription)")
-            } else {
-                print("No error")
+                return nil
             }
-            
+            self.presentedViewController?.dismiss(animated: true, completion: nil)
             return nil
         })
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func showVoiceCommandTab() {
+        self.selectedIndex = 0
     }
-    
 }

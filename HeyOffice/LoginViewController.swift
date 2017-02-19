@@ -85,12 +85,7 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
             }
         } else {
             DispatchQueue.main.async {
-                HUD.flash(.success, onView: self.view, delay: 0.5) { flag in
-                    DispatchQueue.main.async {
-                        self.usernameField.text = nil
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                }
+                HUD.flash(.success, delay: 0.5)
             }
         }
     }
@@ -115,6 +110,8 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         if !valid() {
             return
         }
+        self.usernameField.resignFirstResponder()
+        self.passwordField.resignFirstResponder()
         HUD.show(.progress)
         let result = AWSCognitoIdentityPasswordAuthenticationDetails(username: self.usernameField.text!, password: self.passwordField.text!)
         self.passwordAuthenticationCompletion?.set(result: result)

@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         return true
-    }
+    }        
     
     func startPasswordAuthentication() -> AWSCognitoIdentityPasswordAuthentication {
         print("startPasswordAuthentication")

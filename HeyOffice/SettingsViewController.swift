@@ -64,10 +64,8 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logoutClicked() {
         print("logoutClicked")
-        
-        if let user = self.pool.currentUser() {
-            user.signOut()
-            user.getSession()
+        if let tabController = self.parent as? TabBarController {
+            tabController.signOut()
         }
     }
     
