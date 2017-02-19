@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     
     var userDetails: UserDetails?
     @IBOutlet var nameField: UITextField!
+    @IBOutlet var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.messageLabel.text = ""
         
         HUD.show(.progress)
         dynamoDBObjectMapper.load(UserDetails.self, hashKey: self.credentialsProvider.identityId!, rangeKey:nil)
@@ -69,16 +71,36 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    func valid() -> Bool {
+        self.messageLabel.text = ""
+        
+        if self.userDetails!.name == nil || self.userDetails!.name == "" {
+            self.messageLabel.text = "Name required"
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func updateClicked() {
         print("updateClicked")
+        if !valid() {
+            return
+        }
         
+        HUD.show(.progress)
         self.userDetails!.name = self.nameField.text
         
-        self.dynamoDBObjectMapper.save(self.userDetails!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+        self.dynamoDBObjectMapper.save(self.userDetails!).continueWith(block: { (task: AWSTask<AnyObject>!) -> Any? in
             if let error = task.error as? NSError {
-                print("The request failed. Error: \(error)")
+                DispatchQueue.main.async {
+                    HUD.flash(.error, delay: 0.5)
+                    self.messageLabel.text = AWSErrorMessageParser.parse(error)
+                }
             } else {
-                print("Success!")
+                DispatchQueue.main.async {
+                    HUD.flash(.success, delay: 0.5)
+                }
             }
             return nil
         })
