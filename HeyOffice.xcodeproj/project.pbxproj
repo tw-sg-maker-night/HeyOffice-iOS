@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50C986D31E5DC21C0086A77E /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C986D21E5DC21C0086A77E /* OAuthSwift.framework */; };
+		50C986D41E5DC21C0086A77E /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50C986D21E5DC21C0086A77E /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792B1E4384190096AF45 /* AppDelegate.swift */; };
 		EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792D1E4384190096AF45 /* FirstViewController.swift */; };
 		EF8A79301E4384190096AF45 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792F1E4384190096AF45 /* SecondViewController.swift */; };
@@ -63,6 +65,7 @@
 			files = (
 				EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */,
 				EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */,
+				50C986D41E5DC21C0086A77E /* OAuthSwift.framework in Embed Frameworks */,
 				EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
 				EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */,
 				EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */,
@@ -73,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		50C986D21E5DC21C0086A77E /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
 		EF8A79281E4384190096AF45 /* HeyOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8A792B1E4384190096AF45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8A792D1E4384190096AF45 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			files = (
 				EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */,
 				EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */,
+				50C986D31E5DC21C0086A77E /* OAuthSwift.framework in Frameworks */,
 				EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */,
 				EFBC90511E568C0400FE15D1 /* AWSDynamoDB.framework in Frameworks */,
@@ -198,6 +203,7 @@
 		EFBC902F1E4AAD3800FE15D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50C986D21E5DC21C0086A77E /* OAuthSwift.framework */,
 				EFBC90531E585D6900FE15D1 /* PKHUD.framework */,
 				EFBC90471E5200E000FE15D1 /* AWSLex.framework */,
 				EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */,

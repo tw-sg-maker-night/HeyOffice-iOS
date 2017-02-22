@@ -10,6 +10,7 @@ import UIKit
 import AWSCognitoIdentityProvider
 import AWSDynamoDB
 import PKHUD
+import OAuthSwift
 
 class SettingsViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class SettingsViewController: UIViewController {
     var credentialsProvider: AWSCognitoCredentialsProvider!
     var dynamoDBObjectMapper: AWSDynamoDBObjectMapper!
     var dismissKeyboardGesture: UITapGestureRecognizer!
+    var oauthswift: OAuth2Swift!
     
     var userDetails: UserDetails?
     @IBOutlet var nameField: UITextField!
@@ -32,6 +34,15 @@ class SettingsViewController: UIViewController {
         self.dismissKeyboardGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.dismissKeyboard))
         self.dismissKeyboardGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(dismissKeyboardGesture)
+
+        oauthswift = OAuth2Swift(
+            consumerKey:    UberConsumerKey,
+            consumerSecret: UberConsumerSecret,
+            authorizeUrl:   UberAuthorizeUrl,
+            accessTokenUrl: UberAccessTokenUrl,
+            responseType:   "code"
+        )
+
     }
     
     func dismissKeyboard() {
@@ -112,8 +123,34 @@ class SettingsViewController: UIViewController {
             return
         }
         
-        HUD.show(.progress)
         self.userDetails!.name = self.nameField.text
+        
+        self.saveUserDetail()
+    }
+    
+    @IBAction
+    func signInToUber() {
+        print("starting oauth to uber")
+        let _ = oauthswift.authorize(
+            withCallbackURL: URL(string: "heyoffice://authenticate_uber/uber")!,
+            scope: "profile",
+            state: "UBER",
+            success: { credential, response, parameters in
+                self.userDetails!.uberOAuthToken = credential.oauthToken
+                self.userDetails!.uberOAuthRefreshToken = credential.oauthRefreshToken
+                
+                self.saveUserDetail()
+            },
+            failure: { error in
+                print(error.localizedDescription)
+            }
+        )
+    }
+    
+    func saveUserDetail() {
+        DispatchQueue.main.async {
+            HUD.show(.progress)
+        }
         
         self.dynamoDBObjectMapper.save(self.userDetails!).continueWith(block: { (task: AWSTask<AnyObject>!) -> Any? in
             if let error = task.error as? NSError {
@@ -129,4 +166,5 @@ class SettingsViewController: UIViewController {
             return nil
         })
     }
+
 }

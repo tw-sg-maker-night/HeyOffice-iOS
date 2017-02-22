@@ -13,6 +13,11 @@ let CognitoIdentityUserPoolRegion = AWSRegionType.USEast1
 let CognitoIdentityUserPoolAppClientId = ""
 let CognitoIdentityUserPoolAppClientSecret = ""
 let CognitoIdentityUserPoolId = ""
-let CognitoIdentityId = ""
+let CognitoIdentityPoolId = ""
 let BotName = "HeyOffice"
 let BotAlias = "$LATEST"
+
+let UberConsumerKey = ""
+let UberConsumerSecret = ""
+let UberAuthorizeUrl = "https://login.uber.com/oauth/v2/authorize"
+let UberAccessTokenUrl = "https://login.uber.com/oauth/v2/token"

@@ -11,6 +11,7 @@ import AWSCore
 import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSLex
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
@@ -110,6 +111,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
                     return true
                 }
             }
+            else if (command == "authenticate_uber") {
+                OAuthSwift.handle(url: url)
+            }
+            return true
         }
         return false
     }
@@ -149,7 +154,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

@@ -12,6 +12,8 @@ import AWSDynamoDB
 class UserDetails: AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     var userId:String?
     var name:String?
+    var uberOAuthToken:String?
+    var uberOAuthRefreshToken:String?
     
     class func dynamoDBTableName() -> String {
         return "HeyOfficeUsers"
