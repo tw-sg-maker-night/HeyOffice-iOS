@@ -12,6 +12,7 @@ import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSLex
 import OAuthSwift
+import AWSS3
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
@@ -131,6 +132,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         controller.user = AWSCognitoIdentityUserPool(forKey: "UserPool").getUser(username)
         controller.initialCodeValue = code
         return controller
+    }
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        AWSS3TransferUtility.interceptApplication(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

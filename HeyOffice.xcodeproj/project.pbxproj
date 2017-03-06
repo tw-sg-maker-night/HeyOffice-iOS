@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06AEFB601E670549006D506D /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AEFB5F1E670549006D506D /* AWSS3.framework */; };
+		06AEFB611E670549006D506D /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06AEFB5F1E670549006D506D /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06FF6CEB1E6D064D003BDC23 /* FaceCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF6CEA1E6D064D003BDC23 /* FaceCaptureViewController.swift */; };
 		50C986D31E5DC21C0086A77E /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C986D21E5DC21C0086A77E /* OAuthSwift.framework */; };
 		50C986D41E5DC21C0086A77E /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50C986D21E5DC21C0086A77E /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792B1E4384190096AF45 /* AppDelegate.swift */; };
@@ -66,6 +69,7 @@
 				EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */,
 				EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */,
 				50C986D41E5DC21C0086A77E /* OAuthSwift.framework in Embed Frameworks */,
+				06AEFB611E670549006D506D /* AWSS3.framework in Embed Frameworks */,
 				EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
 				EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */,
 				EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */,
@@ -76,6 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06AEFB5F1E670549006D506D /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
+		06FF6CEA1E6D064D003BDC23 /* FaceCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptureViewController.swift; sourceTree = "<group>"; };
 		50C986D21E5DC21C0086A77E /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
 		EF8A79281E4384190096AF45 /* HeyOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8A792B1E4384190096AF45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 				EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */,
 				EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */,
 				50C986D31E5DC21C0086A77E /* OAuthSwift.framework in Frameworks */,
+				06AEFB601E670549006D506D /* AWSS3.framework in Frameworks */,
 				EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */,
 				EFBC90511E568C0400FE15D1 /* AWSDynamoDB.framework in Frameworks */,
@@ -196,6 +203,7 @@
 				EFBC903C1E4D7F2900FE15D1 /* NewPasswordViewController.swift */,
 				EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */,
 				EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */,
+				06FF6CEA1E6D064D003BDC23 /* FaceCaptureViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 		EFBC902F1E4AAD3800FE15D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06AEFB5F1E670549006D506D /* AWSS3.framework */,
 				50C986D21E5DC21C0086A77E /* OAuthSwift.framework */,
 				EFBC90531E585D6900FE15D1 /* PKHUD.framework */,
 				EFBC90471E5200E000FE15D1 /* AWSLex.framework */,
@@ -347,6 +356,7 @@
 				EFBC90571E591B7500FE15D1 /* AWSErrorMessageParser.swift in Sources */,
 				EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */,
 				EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */,
+				06FF6CEB1E6D064D003BDC23 /* FaceCaptureViewController.swift in Sources */,
 				EFBC904F1E56877400FE15D1 /* UserDetails.swift in Sources */,
 				EFBC903D1E4D7F2900FE15D1 /* NewPasswordViewController.swift in Sources */,
 				EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */,

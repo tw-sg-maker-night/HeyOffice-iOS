@@ -21,3 +21,5 @@ let UberConsumerKey = ""
 let UberConsumerSecret = ""
 let UberAuthorizeUrl = "https://login.uber.com/oauth/v2/authorize"
 let UberAccessTokenUrl = "https://login.uber.com/oauth/v2/token"
+
+let AWSS3BucketName = ""
