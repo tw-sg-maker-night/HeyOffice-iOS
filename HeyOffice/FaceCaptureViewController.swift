@@ -9,13 +9,13 @@
 import UIKit
 import AVFoundation
 import AWSS3
+import PKHUD
 
 class FaceCaptureViewController: UIViewController {
     
     @IBOutlet weak var cameraPreview: UIView!
     @IBOutlet weak var captureImage: UIImageView!
     @IBOutlet weak var captureButton: UIButton!
-    @IBOutlet weak var uploadProgress: UIProgressView!
     
     let captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -91,7 +91,6 @@ class FaceCaptureViewController: UIViewController {
         }
         cameraPreview.isHidden = false
         captureButton.isHidden = false
-        uploadProgress.isHidden = true
     }
     
     func stopSession() {
@@ -117,8 +116,7 @@ class FaceCaptureViewController: UIViewController {
     }
     
     func uploadPhoto(photo: UIImage) {
-        
-        uploadProgress.isHidden = false
+        HUD.show(.progress)
         
         let fileName = UUID().uuidString
         let fileExt = "jpeg"
@@ -129,7 +127,7 @@ class FaceCaptureViewController: UIViewController {
         let expression = AWSS3TransferUtilityUploadExpression()
         let progressBlock: AWSS3TransferUtilityProgressBlock = { (task: AWSS3TransferUtilityTask, progress:Progress) in
             DispatchQueue.main.async(execute: {
-                self.uploadProgress.progress = Float(progress.completedUnitCount/progress.totalUnitCount)
+                // update progress bar
             })
         }
         expression.progressBlock = progressBlock
@@ -137,6 +135,9 @@ class FaceCaptureViewController: UIViewController {
         let completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock = { (task, error) -> Void in
             if let err = error {
                 print("upload error: \(err)")
+            }
+            DispatchQueue.main.async {
+                HUD.flash(.success, delay: 0.5)
             }
         }
         
@@ -146,7 +147,6 @@ class FaceCaptureViewController: UIViewController {
                 print("error: \(error)")
             }
             if let _ = task.result {
-                
             }
             return nil
         }

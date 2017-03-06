@@ -241,9 +241,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xil-CR-90d" userLabel="bottom control">
                                 <rect key="frame" x="0.0" y="571" width="375" height="96"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ftx-UI-1Io">
-                                        <rect key="frame" x="20" y="47" width="335" height="2"/>
-                                    </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-HM-3WE" userLabel="capture button">
                                         <rect key="frame" x="147" y="8" width="80" height="80"/>
                                         <constraints>
@@ -259,11 +256,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2Cq-HM-3WE" firstAttribute="centerY" secondItem="Xil-CR-90d" secondAttribute="centerY" id="8Qb-dl-Qcj"/>
-                                    <constraint firstItem="ftx-UI-1Io" firstAttribute="leading" secondItem="Xil-CR-90d" secondAttribute="leading" constant="20" id="I0F-Lv-Bvu"/>
                                     <constraint firstItem="2Cq-HM-3WE" firstAttribute="centerX" secondItem="Xil-CR-90d" secondAttribute="centerX" id="OKF-r8-G1a"/>
-                                    <constraint firstAttribute="trailing" secondItem="ftx-UI-1Io" secondAttribute="trailing" constant="20" id="W43-yO-9AY"/>
                                     <constraint firstAttribute="height" constant="96" id="isd-Za-Wl3"/>
-                                    <constraint firstItem="ftx-UI-1Io" firstAttribute="centerY" secondItem="Xil-CR-90d" secondAttribute="centerY" id="tPr-Z5-oiY"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fbe-vB-Xsc">
@@ -290,7 +284,6 @@
                         <outlet property="cameraPreview" destination="Rjt-hJ-dN0" id="pzD-Yt-7Xt"/>
                         <outlet property="captureButton" destination="2Cq-HM-3WE" id="e9F-cL-R8x"/>
                         <outlet property="captureImage" destination="Fbe-vB-Xsc" id="9JS-ho-1n1"/>
-                        <outlet property="uploadProgress" destination="ftx-UI-1Io" id="xFX-od-lg3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qm-Tg-TGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
