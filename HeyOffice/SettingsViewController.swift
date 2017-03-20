@@ -101,7 +101,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logoutClicked() {
         print("logoutClicked")
-        if let tabController = self.parent as? TabBarController {
+        if let tabController = self.tabBarController as? TabBarController {
             tabController.signOut()
         }
     }

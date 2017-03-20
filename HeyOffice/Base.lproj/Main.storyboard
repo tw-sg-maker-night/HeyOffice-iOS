@@ -224,7 +224,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="w8A-za-5WK" secondAttribute="trailing" id="ych-b1-yTE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Gzu-h7-UgK">
+                    <navigationItem key="navigationItem" title="Settings" id="Gzu-h7-UgK">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="KSH-FH-MNz">
                             <connections>
                                 <action selector="logoutClicked" destination="fPW-e7-Jc4" id="5Pa-u6-ksF"/>
