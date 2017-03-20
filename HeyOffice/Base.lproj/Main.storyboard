@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,7 +134,7 @@
         <!--Settings-->
         <scene sceneID="iI5-DF-VOX">
             <objects>
-                <viewController title="Settings" hidesBottomBarWhenPushed="YES" id="fPW-e7-Jc4" customClass="SettingsViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="fPW-e7-Jc4" customClass="SettingsViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tol-Yy-YbZ"/>
                         <viewControllerLayoutGuide type="bottom" id="V9M-aT-GmW"/>
@@ -244,7 +244,7 @@
         <!--Face Capture View Controller-->
         <scene sceneID="d7E-tN-Iwc">
             <objects>
-                <viewController id="gFR-IZ-v70" customClass="FaceCaptureViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="gFR-IZ-v70" customClass="FaceCaptureViewController" customModule="HeyOffice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZNX-pE-a7Q"/>
                         <viewControllerLayoutGuide type="bottom" id="ohD-pR-WAH"/>
