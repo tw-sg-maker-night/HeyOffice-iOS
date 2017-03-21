@@ -35,6 +35,11 @@ class FaceCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !UIImagePickerController.isCameraDeviceAvailable(.front) {
+            print("No camera available")
+            return
+        }
+        
         setupSession()
         setupPreview()
         startSession()
@@ -47,7 +52,9 @@ class FaceCaptureViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        previewLayer.frame = cameraPreview.bounds
+        if let layer = previewLayer {
+            layer.frame = cameraPreview.bounds
+        }
     }
     
     func setupSession() {
@@ -173,7 +180,9 @@ extension FaceCaptureViewController: AVCapturePhotoCaptureDelegate {
             let dataProvider = CGDataProvider(data: dataImage as CFData)
             let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
             let image = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
-            self.captureImage.image = image
+            DispatchQueue.main.async {
+                self.captureImage.image = image
+            }
             uploadPhoto(photo: image)
             stopSession()
         } else {
