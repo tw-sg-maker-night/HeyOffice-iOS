@@ -38,15 +38,16 @@ class NewPasswordViewController: UIViewController, AWSCognitoIdentityNewPassword
         super.didReceiveMemoryWarning()
     }
     
-    func getNewPasswordDetails(_ newPasswordRequiredInput: AWSCognitoIdentityNewPasswordRequiredInput, newPasswordRequiredCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityNewPasswordRequiredDetails>) {
+    func getNewPasswordDetails(_ newPasswordRequiredInput: AWSCognitoIdentityNewPasswordRequiredInput,
+                               newPasswordRequiredCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityNewPasswordRequiredDetails>) {
         print("getNewPasswordDetails")
-        self.passwordRequiredCompletionSource = newPasswordRequiredCompletionSource;
+        self.passwordRequiredCompletionSource = newPasswordRequiredCompletionSource
     }
     
     func didCompleteNewPasswordStepWithError(_ error: Error?) {
         print("didCompleteNewPasswordStepWithError")
         DispatchQueue.main.async {
-            if let error = error as? NSError {
+            if let error = error as NSError? {
                 let message = error.userInfo["message"] as! String
                 let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -59,7 +60,10 @@ class NewPasswordViewController: UIViewController, AWSCognitoIdentityNewPassword
     
     @IBAction func submitPasswordClicked() {
         print("submitPasswordClicked")
-        let details = AWSCognitoIdentityNewPasswordRequiredDetails(proposedPassword: passwordField.text!, userAttributes: [String : String]())
+        let details = AWSCognitoIdentityNewPasswordRequiredDetails(
+            proposedPassword: passwordField.text!,
+            userAttributes: [String: String]()
+        )
         self.passwordRequiredCompletionSource!.set(result: details)
     }
     

@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController {
         self.messageLabel.text = ""
         disableNameField()
         self.credentialsProvider.getIdentityId().continueWith(block: { (task: AWSTask<NSString>) -> Any? in
-            if let error = task.error as? NSError {
+            if let error = task.error as NSError? {
                 DispatchQueue.main.async {
                     self.messageLabel.text = AWSErrorMessageParser.parse(error)
                 }
@@ -67,9 +67,9 @@ class SettingsViewController: UIViewController {
     
     func loadUserDetails(identityId: String) {
         dynamoDBObjectMapper.load(UserDetails.self, hashKey: identityId, rangeKey:nil)
-            .continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            .continueWith(block: { (task: AWSTask<AnyObject>!) -> Any? in
                 DispatchQueue.main.async {
-                    if let error = task.error as? NSError {
+                    if let error = task.error as NSError? {
                         self.nameField.placeholder = "Error"
                         self.messageLabel.text = AWSErrorMessageParser.parse(error)
                         return
@@ -131,11 +131,11 @@ class SettingsViewController: UIViewController {
     @IBAction
     func signInToUber() {
         print("starting oauth to uber")
-        let _ = oauthswift.authorize(
+        _ = oauthswift.authorize(
             withCallbackURL: URL(string: "heyoffice://authenticate_uber/uber")!,
             scope: "profile",
             state: "UBER",
-            success: { credential, response, parameters in
+            success: { credential, _, _ in
                 self.userDetails!.uberOAuthToken = credential.oauthToken
                 self.userDetails!.uberOAuthRefreshToken = credential.oauthRefreshToken
                 
@@ -153,7 +153,7 @@ class SettingsViewController: UIViewController {
         }
         
         self.dynamoDBObjectMapper.save(self.userDetails!).continueWith(block: { (task: AWSTask<AnyObject>!) -> Any? in
-            if let error = task.error as? NSError {
+            if let error = task.error as NSError? {
                 DispatchQueue.main.async {
                     HUD.flash(.error, delay: 0.5)
                     self.messageLabel.text = AWSErrorMessageParser.parse(error)

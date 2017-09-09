@@ -24,7 +24,7 @@ class FaceCaptureViewController: UIViewController {
     let metadataOutput = AVCaptureMetadataOutput()
     let videoQueue = DispatchQueue.global()
     
-    var sessionQueue:DispatchQueue = DispatchQueue(label: "com.tw.heyoffice.session_access_queue", attributes: [])
+    var sessionQueue: DispatchQueue = DispatchQueue(label: "com.tw.heyoffice.session_access_queue", attributes: [])
     var faceViews = [UIView]()
     var faceDetected = false {
         didSet {
@@ -60,7 +60,10 @@ class FaceCaptureViewController: UIViewController {
     func setupSession() {
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         
-        guard let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front),
+        guard let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(
+            deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera],
+            mediaType: AVMediaTypeVideo,
+            position: AVCaptureDevicePosition.front),
             let camera = deviceDiscoverySession.devices.first else {
                 print("No front camera available")
                 return
@@ -137,7 +140,7 @@ class FaceCaptureViewController: UIViewController {
             return
         }
         let expression = AWSS3TransferUtilityUploadExpression()
-        let progressBlock: AWSS3TransferUtilityProgressBlock = { (task: AWSS3TransferUtilityTask, progress:Progress) in
+        let progressBlock: AWSS3TransferUtilityProgressBlock = { (task: AWSS3TransferUtilityTask, progress: Progress) in
             DispatchQueue.main.async(execute: {
                 // update progress bar
             })
@@ -154,11 +157,18 @@ class FaceCaptureViewController: UIViewController {
         }
         
         let transferUtility = AWSS3TransferUtility.default()
-        transferUtility.uploadData(data, bucket: AWSS3BucketName, key: "\(fileName).\(fileExt)", contentType: "image/\(fileExt)", expression: expression, completionHandler: completionHandler).continueWith { (task) -> Any? in
+        transferUtility.uploadData(
+            data,
+            bucket: AWSS3BucketName,
+            key: "\(fileName).\(fileExt)",
+            contentType: "image/\(fileExt)",
+            expression: expression,
+            completionHandler: completionHandler
+        ).continueWith { task -> Any? in
             if let error = task.error {
                 print("error: \(error)")
             }
-            if let _ = task.result {
+            if task.result != nil {
             }
             return nil
         }
@@ -167,18 +177,33 @@ class FaceCaptureViewController: UIViewController {
 }
 
 extension FaceCaptureViewController: AVCapturePhotoCaptureDelegate {
-    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+    
+    //swiftlint:disable:next function_parameter_count
+    func capture(_ captureOutput: AVCapturePhotoOutput,
+                 didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?,
+                 previewPhotoSampleBuffer: CMSampleBuffer?,
+                 resolvedSettings: AVCaptureResolvedPhotoSettings,
+                 bracketSettings: AVCaptureBracketedStillImageSettings?,
+                 error: Error?) {
+        
         if let error = error {
             print("error occure : \(error.localizedDescription)")
         }
         
         if let sampleBuffer = photoSampleBuffer,
             let previewBuffer = previewPhotoSampleBuffer,
-            let dataImage =  AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer:  sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
+            let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
+                forJPEGSampleBuffer: sampleBuffer,
+                previewPhotoSampleBuffer: previewBuffer) {
             print(UIImage(data: dataImage)?.size as Any)
             
             let dataProvider = CGDataProvider(data: dataImage as CFData)
-            let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
+            let cgImageRef: CGImage! = CGImage(
+                jpegDataProviderSource: dataProvider!,
+                decode: nil,
+                shouldInterpolate: true,
+                intent: .defaultIntent
+            )
             let image = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
             DispatchQueue.main.async {
                 self.captureImage.image = image
@@ -194,14 +219,12 @@ extension FaceCaptureViewController: AVCapturePhotoCaptureDelegate {
 extension FaceCaptureViewController: AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        var faces = Array<(id:Int, frame: CGRect)>()
-        for metadataObject in metadataObjects as! [AVMetadataObject] {
-            if metadataObject.type == AVMetadataObjectTypeFace {
-                if let faceObject = metadataObject as? AVMetadataFaceObject {
-                    if let transformedMetadataObject = previewLayer.transformedMetadataObject(for: metadataObject) {
-                        let face:(id: Int, frame: CGRect) = (faceObject.faceID, transformedMetadataObject.bounds)
-                        faces.append(face)
-                    }
+        var faces = [(id: Int, frame: CGRect)]()
+        for metadataObject in metadataObjects as! [AVMetadataObject] where metadataObject.type == AVMetadataObjectTypeFace {
+            if let faceObject = metadataObject as? AVMetadataFaceObject {
+                if let transformedMetadataObject = previewLayer.transformedMetadataObject(for: metadataObject) {
+                    let face:(id: Int, frame: CGRect) = (faceObject.faceID, transformedMetadataObject.bounds)
+                    faces.append(face)
                 }
             }
         }
@@ -212,7 +235,7 @@ extension FaceCaptureViewController: AVCaptureMetadataOutputObjectsDelegate, AVC
         }
     }
     
-    func drawFaceBoxes(faces:Array<(id:Int, frame: CGRect)>) {
+    func drawFaceBoxes(faces: [(id: Int, frame: CGRect)]) {
         let diff = faces.count - faceViews.count
         if diff > 0 {
             for _ in 0..<diff {
@@ -224,8 +247,7 @@ extension FaceCaptureViewController: AVCaptureMetadataOutputObjectsDelegate, AVC
                 faceViews.append(faceView)
                 cameraPreview.addSubview(faceView)
             }
-        }
-        else {
+        } else {
             for _ in 0..<abs(diff) {
                 faceViews[0].removeFromSuperview()
                 faceViews.remove(at: 0)

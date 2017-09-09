@@ -64,7 +64,7 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
         self.user?.confirmForgotPassword(self.codeField.text!, password: self.passwordField.text!)
             .continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserConfirmForgotPasswordResponse>) -> Any? in
                 DispatchQueue.main.async {
-                    if let error = task.error as? NSError {
+                    if let error = task.error as NSError? {
                         self.handleError(error)
                     } else {
                         self.handleSuccess()
@@ -80,8 +80,8 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
     }
     
     func handleSuccess() {
-        HUD.flash(.success, delay: 0.5) { flag in
-            let _ = self.navigationController?.popToRootViewController(animated: true)
+        HUD.flash(.success, delay: 0.5) { _ in
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }
     }
     

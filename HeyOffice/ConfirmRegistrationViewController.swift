@@ -71,7 +71,7 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
         HUD.show(.progress)
         self.user.confirmSignUp(self.codeField!.text!, forceAliasCreation: true)
             .continueWith { (task: AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse>) -> Any? in
-                if let error = task.error as? NSError {
+                if let error = task.error as NSError? {
                     DispatchQueue.main.async {
                         HUD.flash(.error, delay: 0.5)
                         self.messageLabel.text = AWSErrorMessageParser.parse(error)
@@ -82,7 +82,7 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
                         if let loginController = self.navigationController?.viewControllers.first as? LoginViewController {
                             loginController.usernameField.text = self.emailField?.text
                         }
-                        let _ = self.navigationController?.popToRootViewController(animated: true)
+                        _ = self.navigationController?.popToRootViewController(animated: true)
                     }
                 }
                 return nil

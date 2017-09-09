@@ -98,7 +98,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             .continueWith(block: { (response: AWSTask<AWSCognitoIdentityUserPoolSignUpResponse>) -> Any? in
                 
                 DispatchQueue.main.async {
-                    if let error = response.error as? NSError {
+                    if let error = response.error as NSError? {
                         self.displayError(error)
                     } else {
                         self.user = response.result?.user
@@ -111,12 +111,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginClicked() {
         print("loginClicked")
-        let _ = self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func displaySuccess() {
         print("displaySuccess")
-        HUD.flash(.labeledSuccess(title: "Success", subtitle: "A confirmation email has been sent."), onView: self.view, delay: 1.0) { flag in
+        HUD.flash(
+            .labeledSuccess(title: "Success", subtitle: "A confirmation email has been sent."),
+            onView: self.view,
+            delay: 1.0) { _ in
             self.performSegue(withIdentifier: "ConfirmRegistration", sender: self)
         }
     }

@@ -23,7 +23,7 @@ class FirstViewController: UIViewController, AWSLexVoiceButtonDelegate {
 
     func voiceButton(_ button: AWSLexVoiceButton, on response: AWSLexVoiceButtonResponse) {
         DispatchQueue.main.async(execute: {
-            print("on text output \(response.outputText)")
+            print("on text output \(response.outputText ?? "''")")
             self.outputLabel.text = response.outputText
         })
     }
@@ -33,4 +33,3 @@ class FirstViewController: UIViewController, AWSLexVoiceButtonDelegate {
     }
 
 }
-

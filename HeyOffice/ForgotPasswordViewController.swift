@@ -63,7 +63,7 @@ class ForgotPasswordViewController: UIViewController {
         self.user?.forgotPassword()
             .continueWith(block: { (task: AWSTask<AWSCognitoIdentityUserForgotPasswordResponse>) -> Any? in
                 DispatchQueue.main.async {
-                    if let error = task.error as? NSError {
+                    if let error = task.error as NSError? {
                         self.handleError(error)
                     } else {
                         self.handleSuccess()
@@ -81,7 +81,7 @@ class ForgotPasswordViewController: UIViewController {
     
     func handleSuccess() {
         print("ForgotPasswordViewController.handleSuccess")
-        HUD.flash(.success, delay: 0.5) { flag in
+        HUD.flash(.success, delay: 0.5) { _ in
             self.performSegue(withIdentifier: "ConfirmForgotPassword", sender: self)
         }
     }

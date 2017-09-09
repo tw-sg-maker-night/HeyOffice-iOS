@@ -52,7 +52,7 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     
     func keyboardWillHide(notification: NSNotification) {
         print("keyboardWillHide")
-        if let _ = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue != nil {
             self.baselineConstraint.constant = 20
             let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
             UIView.animate(withDuration: duration, animations: {
@@ -70,15 +70,16 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         super.didReceiveMemoryWarning()
     }
     
-    func getDetails(_ authenticationInput: AWSCognitoIdentityPasswordAuthenticationInput, passwordAuthenticationCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>) {
+    func getDetails(_ authenticationInput: AWSCognitoIdentityPasswordAuthenticationInput,
+                    passwordAuthenticationCompletionSource: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>) {
         print("LoginViewController.getDetails")
         
-        self.passwordAuthenticationCompletion = passwordAuthenticationCompletionSource;
+        self.passwordAuthenticationCompletion = passwordAuthenticationCompletionSource
     }
     
     func didCompleteStepWithError(_ error: Error?) {
         print("LoginViewController.didCompleteStepWithError")
-        if let error = error as? NSError {
+        if let error = error as NSError? {
             DispatchQueue.main.async {
                 HUD.flash(.error, delay: 0.5)
                 self.messageLabel.text = AWSErrorMessageParser.parse(error)
@@ -139,4 +140,3 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
     }
     
 }
-

@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06AEFB601E670549006D506D /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AEFB5F1E670549006D506D /* AWSS3.framework */; };
-		06AEFB611E670549006D506D /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06AEFB5F1E670549006D506D /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06FF6CEB1E6D064D003BDC23 /* FaceCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF6CEA1E6D064D003BDC23 /* FaceCaptureViewController.swift */; };
-		50C986D31E5DC21C0086A77E /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C986D21E5DC21C0086A77E /* OAuthSwift.framework */; };
-		50C986D41E5DC21C0086A77E /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50C986D21E5DC21C0086A77E /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		229D8E7C44527DB509C14031 /* Pods_HeyOffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211D886F4BA40B5454B23B0D /* Pods_HeyOffice.framework */; };
+		7F04DA0C2DA71C1731646C2F /* Pods_HeyOfficeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA5BCD73EBE75A37F44D033 /* Pods_HeyOfficeTests.framework */; };
 		EF8A792C1E4384190096AF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792B1E4384190096AF45 /* AppDelegate.swift */; };
 		EF8A792E1E4384190096AF45 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792D1E4384190096AF45 /* FirstViewController.swift */; };
 		EF8A79301E4384190096AF45 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A792F1E4384190096AF45 /* SecondViewController.swift */; };
@@ -19,10 +17,6 @@
 		EF8A79351E4384190096AF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8A79341E4384190096AF45 /* Assets.xcassets */; };
 		EF8A79381E4384190096AF45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8A79361E4384190096AF45 /* LaunchScreen.storyboard */; };
 		EF8A79431E4384190096AF45 /* HeyOfficeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A79421E4384190096AF45 /* HeyOfficeTests.swift */; };
-		EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */; };
-		EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */; };
-		EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EFBC90311E4AAD9900FE15D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90301E4AAD9900FE15D1 /* Constants.swift */; };
 		EFBC90331E4AAECE00FE15D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */; };
 		EFBC90351E4AB01300FE15D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90341E4AB01300FE15D1 /* TabBarController.swift */; };
@@ -33,20 +27,9 @@
 		EFBC903F1E4D980700FE15D1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */; };
 		EFBC90411E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */; };
 		EFBC90441E4E147F00FE15D1 /* String+HeyOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */; };
-		EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90471E5200E000FE15D1 /* AWSLex.framework */; };
-		EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90471E5200E000FE15D1 /* AWSLex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EFBC904F1E56877400FE15D1 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC904E1E56877400FE15D1 /* UserDetails.swift */; };
-		EFBC90511E568C0400FE15D1 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; };
-		EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; };
-		EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EFBC90571E591B7500FE15D1 /* AWSErrorMessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */; };
 		EFBC90591E591BB700FE15D1 /* AWSErrorMessageParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC90581E591BB700FE15D1 /* AWSErrorMessageParserTests.swift */; };
-		EFBC905A1E5923AA00FE15D1 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90531E585D6900FE15D1 /* PKHUD.framework */; };
-		EFBC905B1E5923B100FE15D1 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90471E5200E000FE15D1 /* AWSLex.framework */; };
-		EFBC905C1E5923B500FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */; };
-		EFBC905D1E5923BF00FE15D1 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */; };
-		EFBC905E1E5923C200FE15D1 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EFBC90491E5200E100FE15D1 /* AWSLex.framework in Embed Frameworks */,
-				EFBC90551E585D6900FE15D1 /* PKHUD.framework in Embed Frameworks */,
-				50C986D41E5DC21C0086A77E /* OAuthSwift.framework in Embed Frameworks */,
-				06AEFB611E670549006D506D /* AWSS3.framework in Embed Frameworks */,
-				EFBC902B1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
-				EFBC902D1E4AAD3200FE15D1 /* AWSCore.framework in Embed Frameworks */,
-				EFBC90521E568C0400FE15D1 /* AWSDynamoDB.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,9 +56,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		06AEFB5F1E670549006D506D /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
 		06FF6CEA1E6D064D003BDC23 /* FaceCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCaptureViewController.swift; sourceTree = "<group>"; };
-		50C986D21E5DC21C0086A77E /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
+		211D886F4BA40B5454B23B0D /* Pods_HeyOffice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeyOffice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42BD95EBF19D3B456805532E /* Pods-HeyOffice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyOffice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeyOffice/Pods-HeyOffice.debug.xcconfig"; sourceTree = "<group>"; };
+		9A3323F516F303693EC3FC37 /* Pods-HeyOfficeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyOfficeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeyOfficeTests/Pods-HeyOfficeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9F27423BEF79870B464338A /* Pods-HeyOfficeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyOfficeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeyOfficeTests/Pods-HeyOfficeTests.release.xcconfig"; sourceTree = "<group>"; };
+		CCA5BCD73EBE75A37F44D033 /* Pods_HeyOfficeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeyOfficeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46FE5AE6CFBCC3BE01C7BA9 /* Pods-HeyOffice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyOffice.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeyOffice/Pods-HeyOffice.release.xcconfig"; sourceTree = "<group>"; };
 		EF8A79281E4384190096AF45 /* HeyOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8A792B1E4384190096AF45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8A792D1E4384190096AF45 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -94,8 +74,6 @@
 		EF8A793E1E4384190096AF45 /* HeyOfficeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyOfficeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8A79421E4384190096AF45 /* HeyOfficeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyOfficeTests.swift; sourceTree = "<group>"; };
 		EF8A79441E4384190096AF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProvider.framework; path = Carthage/Build/iOS/AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
-		EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
 		EFBC90301E4AAD9900FE15D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EFBC90321E4AAECE00FE15D1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFBC90341E4AB01300FE15D1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -106,10 +84,7 @@
 		EFBC903E1E4D980700FE15D1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC90401E4D9AA500FE15D1 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EFBC90431E4E147F00FE15D1 /* String+HeyOffice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HeyOffice.swift"; sourceTree = "<group>"; };
-		EFBC90471E5200E000FE15D1 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLex.framework; path = Carthage/Build/iOS/AWSLex.framework; sourceTree = "<group>"; };
 		EFBC904E1E56877400FE15D1 /* UserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
-		EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Carthage/Build/iOS/AWSDynamoDB.framework; sourceTree = "<group>"; };
-		EFBC90531E585D6900FE15D1 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSErrorMessageParser.swift; sourceTree = "<group>"; };
 		EFBC90581E591BB700FE15D1 /* AWSErrorMessageParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSErrorMessageParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,13 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBC90481E5200E100FE15D1 /* AWSLex.framework in Frameworks */,
-				EFBC90541E585D6900FE15D1 /* PKHUD.framework in Frameworks */,
-				50C986D31E5DC21C0086A77E /* OAuthSwift.framework in Frameworks */,
-				06AEFB601E670549006D506D /* AWSS3.framework in Frameworks */,
-				EFBC902A1E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
-				EFBC902C1E4AAD3200FE15D1 /* AWSCore.framework in Frameworks */,
-				EFBC90511E568C0400FE15D1 /* AWSDynamoDB.framework in Frameworks */,
+				229D8E7C44527DB509C14031 /* Pods_HeyOffice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,17 +102,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBC905B1E5923B100FE15D1 /* AWSLex.framework in Frameworks */,
-				EFBC905D1E5923BF00FE15D1 /* AWSCore.framework in Frameworks */,
-				EFBC905C1E5923B500FE15D1 /* AWSCognitoIdentityProvider.framework in Frameworks */,
-				EFBC905A1E5923AA00FE15D1 /* PKHUD.framework in Frameworks */,
-				EFBC905E1E5923C200FE15D1 /* AWSDynamoDB.framework in Frameworks */,
+				7F04DA0C2DA71C1731646C2F /* Pods_HeyOfficeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		907C0CAB01E630AEA2088F87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42BD95EBF19D3B456805532E /* Pods-HeyOffice.debug.xcconfig */,
+				D46FE5AE6CFBCC3BE01C7BA9 /* Pods-HeyOffice.release.xcconfig */,
+				9A3323F516F303693EC3FC37 /* Pods-HeyOfficeTests.debug.xcconfig */,
+				C9F27423BEF79870B464338A /* Pods-HeyOfficeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EF8A791F1E4384190096AF45 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +127,7 @@
 				EF8A792A1E4384190096AF45 /* HeyOffice */,
 				EF8A79411E4384190096AF45 /* HeyOfficeTests */,
 				EF8A79291E4384190096AF45 /* Products */,
+				907C0CAB01E630AEA2088F87 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,13 +188,8 @@
 		EFBC902F1E4AAD3800FE15D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06AEFB5F1E670549006D506D /* AWSS3.framework */,
-				50C986D21E5DC21C0086A77E /* OAuthSwift.framework */,
-				EFBC90531E585D6900FE15D1 /* PKHUD.framework */,
-				EFBC90471E5200E000FE15D1 /* AWSLex.framework */,
-				EFBC90281E4AAD3200FE15D1 /* AWSCognitoIdentityProvider.framework */,
-				EFBC90291E4AAD3200FE15D1 /* AWSCore.framework */,
-				EFBC90501E568C0400FE15D1 /* AWSDynamoDB.framework */,
+				211D886F4BA40B5454B23B0D /* Pods_HeyOffice.framework */,
+				CCA5BCD73EBE75A37F44D033 /* Pods_HeyOfficeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,10 +217,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF8A79471E4384190096AF45 /* Build configuration list for PBXNativeTarget "HeyOffice" */;
 			buildPhases = (
+				725533EAEBFDBEAEB0359747 /* [CP] Check Pods Manifest.lock */,
 				EF8A79241E4384190096AF45 /* Sources */,
 				EF8A79251E4384190096AF45 /* Frameworks */,
 				EF8A79261E4384190096AF45 /* Resources */,
 				EFBC902E1E4AAD3200FE15D1 /* Embed Frameworks */,
+				D240B49FEEA3AE47C1E09E1A /* [CP] Embed Pods Frameworks */,
+				11D825AA57B791FBCD84C344 /* [CP] Copy Pods Resources */,
+				EF15DF591F643EBE005701EE /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -263,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF8A794A1E4384190096AF45 /* Build configuration list for PBXNativeTarget "HeyOfficeTests" */;
 			buildPhases = (
+				3A5959717F017CEC58CDEFF9 /* [CP] Check Pods Manifest.lock */,
 				EF8A793A1E4384190096AF45 /* Sources */,
 				EF8A793B1E4384190096AF45 /* Frameworks */,
 				EF8A793C1E4384190096AF45 /* Resources */,
+				E2A21CFD50E09F75C6BC6602 /* [CP] Embed Pods Frameworks */,
+				7A2D0B0D954BCDB70A13282A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,6 +317,141 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11D825AA57B791FBCD84C344 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeyOffice/Pods-HeyOffice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A5959717F017CEC58CDEFF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HeyOfficeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		725533EAEBFDBEAEB0359747 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HeyOffice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A2D0B0D954BCDB70A13282A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeyOfficeTests/Pods-HeyOfficeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D240B49FEEA3AE47C1E09E1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HeyOffice/Pods-HeyOffice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSLex/AWSLex.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSLex.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeyOffice/Pods-HeyOffice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2A21CFD50E09F75C6BC6602 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HeyOfficeTests/Pods-HeyOfficeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeyOfficeTests/Pods-HeyOfficeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF15DF591F643EBE005701EE /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF8A79241E4384190096AF45 /* Sources */ = {
@@ -442,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -486,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -497,13 +611,11 @@
 		};
 		EF8A79481E4384190096AF45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42BD95EBF19D3B456805532E /* Pods-HeyOffice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LL62P32G5C;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HeyOffice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -515,13 +627,11 @@
 		};
 		EF8A79491E4384190096AF45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D46FE5AE6CFBCC3BE01C7BA9 /* Pods-HeyOffice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LL62P32G5C;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HeyOffice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,8 +643,9 @@
 		};
 		EF8A794B1E4384190096AF45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A3323F516F303693EC3FC37 /* Pods-HeyOfficeTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9269KSNZG8;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -552,8 +663,9 @@
 		};
 		EF8A794C1E4384190096AF45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F27423BEF79870B464338A /* Pods-HeyOfficeTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9269KSNZG8;
 				FRAMEWORK_SEARCH_PATHS = (

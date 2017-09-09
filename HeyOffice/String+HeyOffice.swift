@@ -17,11 +17,11 @@ extension String {
     fileprivate func dictionaryBySplitting(_ elementSeparator: String, keyValueSeparator: String) -> [String: String] {
         
         var string = self
-        if(hasPrefix(elementSeparator)) {
+        if hasPrefix(elementSeparator) {
             string = String(characters.dropFirst(1))
         }
         
-        var parameters = Dictionary<String, String>()
+        var parameters = [String: String]()
         
         let scanner = Scanner(string: string)
         
@@ -37,7 +37,7 @@ extension String {
             scanner.scanUpTo(elementSeparator, into: &value)
             scanner.scanString(elementSeparator, into: nil)
             
-            if let key = key as? String, let value = value as? String {
+            if let key = key as String?, let value = value as String? {
                 parameters.updateValue(value, forKey: key)
             }
         }

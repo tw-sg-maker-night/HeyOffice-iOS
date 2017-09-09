@@ -9,11 +9,12 @@
 import Foundation
 import AWSCore
 
+//swiftlint:disable identifier_name
 let CognitoIdentityUserPoolRegion = AWSRegionType.USEast1
-let CognitoIdentityUserPoolAppClientId = ""
-let CognitoIdentityUserPoolAppClientSecret = ""
-let CognitoIdentityUserPoolId = ""
-let CognitoIdentityPoolId = ""
+let CognitoIdentityUserPoolAppClientId = "gl8fgb3pikscqdhqfektbpbu7"
+let CognitoIdentityUserPoolAppClientSecret = "1ojnfhl9nt5kh9grqviedijduemja5dpmmu4fdkdhtj6le4ltotf"
+let CognitoIdentityUserPoolId = "us-east-1_AGW8nAm52"
+let CognitoIdentityPoolId = "us-east-1:83682090-77e2-4f79-8107-088402002b02"
 let BotName = "HeyOffice"
 let BotAlias = "$LATEST"
 
