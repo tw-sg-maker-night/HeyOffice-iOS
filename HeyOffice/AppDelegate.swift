@@ -13,9 +13,10 @@ import AWSCognitoIdentityProvider
 import AWSLex
 import OAuthSwift
 import AWSS3
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var storyboard: UIStoryboard?
@@ -75,8 +76,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        registerForRemoteNotification()
+        
         return true
     }        
+    
+    func registerForRemoteNotification() {
+        if #available(iOS 10.0, *) {
+            let center  = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.requestAuthorization(options: [.sound, .alert, .badge]) { (_, error) in
+                if error == nil {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        } else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+    }
     
     func startPasswordAuthentication() -> AWSCognitoIdentityPasswordAuthentication {
         print("startPasswordAuthentication")
@@ -176,5 +194,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
 
     func applicationWillTerminate(_ application: UIApplication) {
         
+    }
+    
+    //Called when a notification is delivered to a foreground app.
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("User Info = ", notification.request.content.userInfo)
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    //Called to let your app know which action was selected by the user for a given notification.
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("User Info = ", response.notification.request.content.userInfo)
+        completionHandler()
+    }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        print("didRegisterForRemoteNotificationsWithDeviceToken")
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        print("deviceToken = ", token)
     }
 }
