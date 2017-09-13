@@ -120,12 +120,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EF15DF881F68D427005701EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		EF8A791F1E4384190096AF45 = {
 			isa = PBXGroup;
 			children = (
-				EFBC902F1E4AAD3800FE15D1 /* Frameworks */,
 				EF8A792A1E4384190096AF45 /* HeyOffice */,
 				EF8A79411E4384190096AF45 /* HeyOfficeTests */,
+				EFBC902F1E4AAD3800FE15D1 /* Frameworks */,
 				EF8A79291E4384190096AF45 /* Products */,
 				907C0CAB01E630AEA2088F87 /* Pods */,
 			);
@@ -143,12 +151,12 @@
 		EF8A792A1E4384190096AF45 /* HeyOffice */ = {
 			isa = PBXGroup;
 			children = (
-				EFBC904D1E56876100FE15D1 /* Models */,
-				EFBC90421E4E147100FE15D1 /* Extensions */,
+				EF15DF881F68D427005701EE /* Common */,
 				EFBC90271E4AABAB00FE15D1 /* Controllers */,
+				EFBC90421E4E147100FE15D1 /* Extensions */,
+				EFBC904D1E56876100FE15D1 /* Models */,
 				EF8A792B1E4384190096AF45 /* AppDelegate.swift */,
 				EFBC90301E4AAD9900FE15D1 /* Constants.swift */,
-				EFBC90561E591B7500FE15D1 /* AWSErrorMessageParser.swift */,
 				EF8A79311E4384190096AF45 /* Main.storyboard */,
 				EF8A79341E4384190096AF45 /* Assets.xcassets */,
 				EF8A79361E4384190096AF45 /* LaunchScreen.storyboard */,
@@ -269,7 +277,7 @@
 					EF8A79271E4384190096AF45 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = LL62P32G5C;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					EF8A793D1E4384190096AF45 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -614,13 +622,16 @@
 			baseConfigurationReference = 42BD95EBF19D3B456805532E /* Pods-HeyOffice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LL62P32G5C;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HeyOffice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.HeyOffice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.HeyOfficeSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1ab7dc33-a2c7-4044-affd-09a82e953ead";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.thoughtworks.HeyOfficeSG";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -630,13 +641,16 @@
 			baseConfigurationReference = D46FE5AE6CFBCC3BE01C7BA9 /* Pods-HeyOffice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = LL62P32G5C;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HeyOffice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.HeyOffice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.HeyOfficeSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "12f83ee6-07f3-454d-80bb-90e7410b6f2a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.thoughtworks.HeyOfficeSG";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

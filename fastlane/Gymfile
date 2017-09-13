@@ -1,0 +1,7 @@
+sdk "iphoneos10.3"
+
+scheme "HeyOffice"
+
+silent true
+clean true
+output_directory "./build"
