@@ -50,25 +50,15 @@ platform :ios do
     )
   end
 
-  after_all do |lane|
-    # This block is called, only if the executed lane was successful
-
-    # slack(
-    #   message: "Successfully deployed new App Update."
-    # )
+  lane :get_apns_dev_certs do
+    cryptex(type: "export", out: "apns_dev.p12", key: "apns_dev_p12")
+    cryptex(type: "export", out: "apns_dev.pem", key: "apns_dev_pem")
+    cryptex(type: "export", out: "apns_dev.pkey", key: "apns_dev_pkey")
   end
 
-  error do |lane, exception|
-    # slack(
-    #   message: exception.message,
-    #   success: false
-    # )
+  lane :get_apns_prod_certs do
+    cryptex(type: "export", out: "apns_dev.p12", key: "apns_dev_p12")
+    cryptex(type: "export", out: "apns_dev.pem", key: "apns_dev_pem")
+    cryptex(type: "export", out: "apns_dev.pkey", key: "apns_dev_pkey")
   end
 end
-
-
-# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
-# All available actions: https://docs.fastlane.tools/actions
-
-# fastlane reports which actions are used. No personal data is recorded.
-# Learn more at https://github.com/fastlane/fastlane#metrics

@@ -52,6 +52,16 @@ Package a new version for adhoc distribution
 fastlane ios upload
 ```
 
+### ios get_apns_dev_certs
+```
+fastlane ios get_apns_dev_certs
+```
+
+### ios get_apns_prod_certs
+```
+fastlane ios get_apns_prod_certs
+```
+
 
 ----
 
