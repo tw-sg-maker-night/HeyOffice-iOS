@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.55.0"
+fastlane_version "2.94.0"
 
 default_platform :ios
 
@@ -57,8 +57,8 @@ platform :ios do
   end
 
   lane :get_apns_prod_certs do
-    cryptex(type: "export", out: "apns_dev.p12", key: "apns_dev_p12")
-    cryptex(type: "export", out: "apns_dev.pem", key: "apns_dev_pem")
-    cryptex(type: "export", out: "apns_dev.pkey", key: "apns_dev_pkey")
+    cryptex(type: "export", out: "apns_prod.p12", key: "apns_prod_p12")
+    cryptex(type: "export", out: "apns_prod.pem", key: "apns_prod_pem")
+    cryptex(type: "export", out: "apns_prod.pkey", key: "apns_prod_pkey")
   end
 end

@@ -65,3 +65,9 @@ fastlane/test_output
 
 iOSInjectionProject/
 Pods
+apns_dev.p12
+apns_dev.pem
+apns_dev.pkey
+apns_prod.p12
+apns_prod.pem
+apns_prod.pkey
