@@ -35,6 +35,7 @@ class ConfirmForgotPasswordViewController: UIViewController, UITextFieldDelegate
         self.codeField?.text = self.initialCodeValue
     }
     
+    @objc
     func dismissKeyboard() {
         self.view.endEditing(true)
     }

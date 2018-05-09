@@ -15,14 +15,8 @@ extension String {
     }
     
     fileprivate func dictionaryBySplitting(_ elementSeparator: String, keyValueSeparator: String) -> [String: String] {
-        
-        var string = self
-        if hasPrefix(elementSeparator) {
-            string = String(characters.dropFirst(1))
-        }
-        
+        let string = self.deletingPrefix(elementSeparator)
         var parameters = [String: String]()
-        
         let scanner = Scanner(string: string)
         
         var key: NSString?
@@ -44,5 +38,9 @@ extension String {
         
         return parameters
     }
-
+    
+    func deletingPrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
 }

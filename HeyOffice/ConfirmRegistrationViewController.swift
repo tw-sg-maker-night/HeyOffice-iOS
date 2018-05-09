@@ -28,6 +28,7 @@ class ConfirmRegistrationViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(dismissKeyboardGesture)
     }
     
+    @objc
     func dismissKeyboard() {
         self.view.endEditing(true)
     }

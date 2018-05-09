@@ -58,15 +58,17 @@ class FaceCaptureViewController: UIViewController {
     }
     
     func setupSession() {
-        captureSession.sessionPreset = AVCaptureSessionPresetPhoto
+        captureSession.sessionPreset = AVCaptureSession.Preset.photo
         
-        guard let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(
-            deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera],
-            mediaType: AVMediaTypeVideo,
-            position: AVCaptureDevicePosition.front),
-            let camera = deviceDiscoverySession.devices.first else {
-                print("No front camera available")
-                return
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(
+            deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera],
+            mediaType: AVMediaType.video,
+            position: AVCaptureDevice.Position.front
+        )
+        
+        guard let camera = deviceDiscoverySession.devices.first else {
+            print("No front camera available")
+            return
         }
         
         do {
@@ -75,7 +77,7 @@ class FaceCaptureViewController: UIViewController {
                 captureSession.addInput(input)
                 activeInput = input
             }
-        } catch (let error) {
+        } catch let error {
             print("Error setting device input: \(error)")
         }
         
@@ -87,14 +89,14 @@ class FaceCaptureViewController: UIViewController {
         if captureSession.canAddOutput(metadataOutput) {
             captureSession.addOutput(metadataOutput)
         }
-        if (metadataOutput.availableMetadataObjectTypes as! [NSString]).contains(AVMetadataObjectTypeFace as NSString) {
-            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
+        if (metadataOutput.availableMetadataObjectTypes as [NSString]).contains(AVMetadataObject.ObjectType.face as NSString) {
+            metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.face]
         }
     }
     
     func setupPreview() {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreview.layer.addSublayer(previewLayer)
     }
     
@@ -179,12 +181,12 @@ class FaceCaptureViewController: UIViewController {
 extension FaceCaptureViewController: AVCapturePhotoCaptureDelegate {
     
     //swiftlint:disable:next function_parameter_count
-    func capture(_ captureOutput: AVCapturePhotoOutput,
-                 didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?,
-                 previewPhotoSampleBuffer: CMSampleBuffer?,
-                 resolvedSettings: AVCaptureResolvedPhotoSettings,
-                 bracketSettings: AVCaptureBracketedStillImageSettings?,
-                 error: Error?) {
+    func photoOutput(_ captureOutput: AVCapturePhotoOutput,
+                     didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
+                     previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+                     resolvedSettings: AVCaptureResolvedPhotoSettings,
+                     bracketSettings: AVCaptureBracketedStillImageSettings?,
+                     error: Error?) {
         
         if let error = error {
             print("error occure : \(error.localizedDescription)")
@@ -220,7 +222,7 @@ extension FaceCaptureViewController: AVCaptureMetadataOutputObjectsDelegate, AVC
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         var faces = [(id: Int, frame: CGRect)]()
-        for metadataObject in metadataObjects as! [AVMetadataObject] where metadataObject.type == AVMetadataObjectTypeFace {
+        for metadataObject in metadataObjects as! [AVMetadataObject] where metadataObject.type == AVMetadataObject.ObjectType.face {
             if let faceObject = metadataObject as? AVMetadataFaceObject {
                 if let transformedMetadataObject = previewLayer.transformedMetadataObject(for: metadataObject) {
                     let face:(id: Int, frame: CGRect) = (faceObject.faceID, transformedMetadataObject.bounds)

@@ -29,6 +29,7 @@ class ForgotPasswordViewController: UIViewController {
         self.view.addGestureRecognizer(dismissKeyboardGesture)
     }
     
+    @objc
     func dismissKeyboard() {
         self.view.endEditing(true)
     }

@@ -36,15 +36,16 @@ class SettingsViewController: UIViewController {
         self.view.addGestureRecognizer(dismissKeyboardGesture)
 
         oauthswift = OAuth2Swift(
-            consumerKey:    UberConsumerKey,
+            consumerKey: UberConsumerKey,
             consumerSecret: UberConsumerSecret,
-            authorizeUrl:   UberAuthorizeUrl,
+            authorizeUrl: UberAuthorizeUrl,
             accessTokenUrl: UberAccessTokenUrl,
-            responseType:   "code"
+            responseType: "code"
         )
 
     }
     
+    @objc
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
@@ -66,7 +67,7 @@ class SettingsViewController: UIViewController {
     }
     
     func loadUserDetails(identityId: String) {
-        dynamoDBObjectMapper.load(UserDetails.self, hashKey: identityId, rangeKey:nil)
+        dynamoDBObjectMapper.load(UserDetails.self, hashKey: identityId, rangeKey: nil)
             .continueWith(block: { (task: AWSTask<AnyObject>!) -> Any? in
                 DispatchQueue.main.async {
                     if let error = task.error as NSError? {

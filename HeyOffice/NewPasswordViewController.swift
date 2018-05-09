@@ -25,6 +25,7 @@ class NewPasswordViewController: UIViewController, AWSCognitoIdentityNewPassword
         self.view.addGestureRecognizer(dismissKeyboardGesture)
     }
     
+    @objc
     func dismissKeyboard() {
         self.view.endEditing(true)
     }

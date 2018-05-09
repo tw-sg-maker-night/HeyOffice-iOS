@@ -35,10 +35,12 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         NotificationCenter.default.removeObserver(self)
     }
     
+    @objc
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
+    @objc
     func keyboardWillShow(notification: NSNotification) {
         print("keyboardWillShow")
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -50,6 +52,7 @@ class LoginViewController: UIViewController, AWSCognitoIdentityPasswordAuthentic
         }
     }
     
+    @objc
     func keyboardWillHide(notification: NSNotification) {
         print("keyboardWillHide")
         if (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue != nil {
